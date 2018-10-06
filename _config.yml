@@ -1,0 +1,11 @@
+repository: LaBiOS/bioportainer
+theme: jekyll-theme-minimal
+name: BioPortainer
+title: BioPortainer
+description: a Docker Manager UI for Bioinformatics
+author: Menegidio, F.B.
+author_email: fabiano.menegidio@biology.bio.br
+
+logo: https://raw.githubusercontent.com/LaBiOS/BioPortainer/master/images/logo.png
+
+show_downloads: true
