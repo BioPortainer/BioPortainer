@@ -21,4 +21,4 @@ VOLUME /workdir
 EXPOSE 5000
 
 WORKDIR /workdir
-ENTRYPOINT ["start.sh"]
+CMD ["/usr/local/bin/start.sh"]
