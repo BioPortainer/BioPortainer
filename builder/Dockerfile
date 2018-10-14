@@ -2,6 +2,7 @@ FROM alpine:latest
 
 ENV GUIserver_version 1.12.0
 COPY .config/start.sh /usr/local/bin/
+COPY .config/bioportainer.sh /usr/local/bin/
 
 RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-dev libxslt-dev musl-dev \
     linux-headers build-base \
@@ -11,7 +12,8 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
     && mkdir -p /script-server && cd /script-server \
     && unzip ../script-server.zip && rm ../script-server.zip \
     && chmod +x /script-server/launcher.py \
-    && chmod +x /usr/local/bin/start.sh
+    && chmod +x /usr/local/bin/start.sh \
+    && chmod +x /usr/local/bin/bioportainer.sh
 
 COPY .config/cwl-runner.json /script-server/conf/runners/cwl-runner.json
 COPY bioportainer /
@@ -24,3 +26,4 @@ EXPOSE 5000
 
 WORKDIR /workdir
 ENTRYPOINT ["start.sh"]
+ENTRYPOINT ["bioportainer.sh"]
