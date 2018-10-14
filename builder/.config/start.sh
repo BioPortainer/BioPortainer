@@ -3,7 +3,7 @@
 set -e
 
 /bioportainer &
-sleep 10
+sleep 20
 python3 /script-server/launcher.py &
 
 exec "$@"
