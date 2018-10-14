@@ -5,7 +5,7 @@ COPY .config/requirements.txt /
 COPY bioportainer /
 
 RUN apt-get update \
-    && apt-get install -y --allow-unauthenticated --force-yes bash sudo ca-certificates \
+    && apt-get install -y --allow-unauthenticated --force-yes bash sudo ca-certificates cwltool \
     && pip install --no-cache-dir -r requirements.txt \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && cd $HOME \
