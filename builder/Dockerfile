@@ -19,3 +19,4 @@ VOLUME /workdir
 WORKDIR /
 EXPOSE 9000
 ENTRYPOINT ["/bioportainer"]
+ENTRYPOINT ["start-gui.sh"]
