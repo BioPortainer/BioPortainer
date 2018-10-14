@@ -2,8 +2,8 @@
 
 set -e
 
-python3 $HOME/script-server/launcher.py &
-
 /bioportainer &
+sleep 30
+python3 $HOME/script-server/launcher.py &
 
 exec "$@"
