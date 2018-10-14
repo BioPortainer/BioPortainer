@@ -8,7 +8,7 @@ WORKDIR $HOME
 
 RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-dev libxslt-dev musl-dev \
     linux-headers build-base \
-    && pip3 install cwltool tornado typing \
+    && pip3 install cwltool tornado typing snakemake \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
     && mkdir -p $HOME/script-server && cd $HOME/script-server \
