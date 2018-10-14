@@ -2,7 +2,7 @@
   "name": "Common Workflow Language Tool",
   "script_path": "cwltool",
   "description": "Common Workflow Language Tool",
-  "working_directory": "/headless/data",
+  "working_directory": "$HOME/workdir",
   "parameters": [
     {
       "name": "CWL Document",
