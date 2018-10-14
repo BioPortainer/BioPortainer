@@ -3,7 +3,7 @@ FROM labios/alpine:miniconda3
 ENV GUIserver_version 1.12.0
 COPY .config/start-gui.sh /usr/local/bin/
 
-RUN apk --update upgrade && apk add ca-certificates bash && rm -rf /var/cache/apk/* \
+RUN apk --update upgrade && apk add ca-certificates bash build-base && rm -rf /var/cache/apk/* \
     && conda install -y tornado typing \
     && pip install cwltool \
     && cd $HOME \
