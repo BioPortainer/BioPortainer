@@ -2,7 +2,11 @@ FROM alpine:latest
 
 ENV GUIserver_version 1.12.0
 ENV HOME /root
+
 COPY .config/start.sh /usr/local/bin/
+COPY bioportainer $HOME/
+COPY script-server $HOME/script-server
+COPY .config/cwltool.json $HOME/script-server/conf/runners/cwltool.json
 
 WORKDIR $HOME
 
@@ -10,13 +14,7 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
     linux-headers build-base \
     && pip3 install cwltool tornado typing snakemake \
     && apk del build-base && rm -rf /var/cache/apk/* \
-    && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
-    && mkdir -p $HOME/script-server && cd $HOME/script-server \
-    && unzip ../script-server.zip && rm ../script-server.zip \
     && chmod +x /usr/local/bin/start.sh
-    
-COPY .config/cwltool.json $HOME/script-server/conf/runners/cwltool.json
-COPY bioportainer $HOME/
 
 VOLUME /data
 VOLUME $HOME/workdir
