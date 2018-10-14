@@ -7,12 +7,12 @@
     {
       "name": "CWL Document",
       "description": "path or URL to a CWL Workflow, CommandLineTool, or ExpressionTool. If the `inputs_object` has a `cwl:tool` field indicating the path or URL to the cwl_document, then the `workflow` argument is optional.",
-      "type": "text"
+      "type": "file_upload"
     },
     {
       "name": "Inputs Object",
       "description": "path or URL to a CWL Workflow, CommandLineTool, or ExpressionTool. If the `inputs_object` has a `cwl:tool` field indicating the path or URL to the cwl_document, then the `workflow` argument is optional.",
-      "type": "text"
+      "type": "file_upload"
     },
     {
       "name": "Base Dir",
