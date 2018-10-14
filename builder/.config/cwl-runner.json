@@ -1,0 +1,83 @@
+{
+  "name": "Common Workflow Language Tool",
+  "script_path": "cwltool",
+  "description": "Common Workflow Language Tool",
+  "working_directory": "/headless/data",
+  "parameters": [
+    {
+      "name": "CWL Document",
+      "description": "path or URL to a CWL Workflow, CommandLineTool, or ExpressionTool. If the `inputs_object` has a `cwl:tool` field indicating the path or URL to the cwl_document, then the `workflow` argument is optional.",
+      "type": "text"
+    },
+    {
+      "name": "Inputs Object",
+      "description": "path or URL to a CWL Workflow, CommandLineTool, or ExpressionTool. If the `inputs_object` has a `cwl:tool` field indicating the path or URL to the cwl_document, then the `workflow` argument is optional.",
+      "type": "text"
+    },
+    {
+      "name": "Base Dir",
+      "param": "--basedir",
+      "description": "Base directory",
+      "type": "text"
+    },
+    {
+      "name": "Output Dir",
+      "param": "--outdir",
+      "description": "Output directory, default current directory",
+      "type": "text"
+    },
+    {
+      "name": "Parallel",
+      "param": "--parallel",
+      "description": "[experimental] Run jobs in parallel. Does not currently keep track of ResourceRequirements like the number of coresor memory and can overload this system",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Preserve env variable",
+      "param": "--preserve-environment",
+      "description": "Preserve specific environment variable when running CommandLineTools. May be provided multiple times.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Preserve all env variable",
+      "param": "--preserve-entire-environment",
+      "description": "Preserve all environment variable when running CommandLineTools.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Delete Docker container",
+      "param": "--rm-container",
+      "description": "Delete Docker container used by jobs after they exit (default)",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Do not delete Docker",
+      "param": "--leave-container",
+      "description": "Do not delete Docker container used by jobs after they exit",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Temp Dir Prefix",
+      "param": "--tmpdir-prefix",
+      "description": "Path prefix for temporary directories",
+      "type": "text"
+    },
+    {
+      "name": "Intermediate Output Dir Prefix",
+      "param": "--tmp-outdir-prefix",
+      "description": "Path prefix for intermediate output directories",
+      "type": "text"
+    },
+    {
+      "name": "Cache Dir",
+      "param": "--cachedir",
+      "description": "Directory to cache intermediate workflow outputs to avoid recomputing steps.",
+      "type": "text"
+    }
+  ]
+}
