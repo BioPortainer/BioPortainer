@@ -3,9 +3,11 @@ FROM labios/alpine:miniconda3
 ENV GUIserver_version 1.12.0
 COPY .config/start-gui.sh /usr/local/bin/
 
-RUN apk --update upgrade && apk add ca-certificates bash build-base && rm -rf /var/cache/apk/* \
+RUN apk --update upgrade && apk add ca-certificates bash build-base \
     && conda install -y tornado typing \
     && pip install cwltool \
+    && apk del build-base && rm -rf /var/cache/apk/* \
+    && conda clean --yes --all \
     && cd $HOME \
     && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
     && mkdir $HOME/script-server/ && cd $HOME/script-server \
