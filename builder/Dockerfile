@@ -1,16 +1,12 @@
-FROM ubuntu:latest
+FROM python:latest
 MAINTAINER Fabiano Menegidio 
 
-RUN apt-get update \
+COPY .config/requirements.txt /
+COPY bioportainer /
+
+RUN pip install --no-cache-dir -r requirements.txt \
+    && apt-get update \
     && apt-get install -y --allow-unauthenticated --force-yes bash sudo ca-certificates cwltool \
-    && wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh \
-    && /bin/bash ~/miniconda.sh -b -p /opt/conda \
-    && rm ~/miniconda.sh \
-    && ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
-    && echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc \
-    && echo "conda activate base" >> ~/.bashrc \
-    && /opt/conda/bin/conda install tornado typing \
-    && /opt/conda/bin/conda clean -tipsy \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && cd $HOME \
     && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
