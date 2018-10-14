@@ -3,9 +3,9 @@ FROM alpine:latest
 ENV GUIserver_version 1.12.0
 COPY .config/start-gui.sh /usr/local/bin/
 
-RUN apk --update upgrade && apk add --update python-dev py-pip bash libxml2-dev libxslt-dev musl-dev \
+RUN apk --update upgrade && apk add --update python3-dev py-pip bash libxml2-dev libxslt-dev musl-dev \
     linux-headers build-base \
-    && pip install cwltool tornado typing \
+    && pip3 install cwltool tornado typings \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && cd $HOME \
     && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
