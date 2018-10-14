@@ -1,4 +1,6 @@
 #!/bin/bash
 
 set -e
-python3 /script-server/launcher.py
+nohup python3 /script-server/launcher.py &
+sleep 20
+/bin/bash /bioportainer
