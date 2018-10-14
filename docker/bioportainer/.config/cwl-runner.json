@@ -27,18 +27,6 @@
       "type": "text"
     },
     {
-      "name": "Temp Dir Prefix",
-      "param": "--tmpdir-prefix",
-      "description": "Path prefix for temporary directories",
-      "type": "text"
-    },
-    {
-      "name": "Intermediate Output Dir Prefix",
-      "param": "--tmp-outdir-prefix",
-      "description": "Path prefix for intermediate output directories",
-      "type": "text"
-    },
-    {
       "name": "Cache Dir",
       "param": "--cachedir",
       "description": "Directory to cache intermediate workflow outputs to avoid recomputing steps.",
