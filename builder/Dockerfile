@@ -24,5 +24,3 @@ EXPOSE 9000
 EXPOSE 5000
 
 WORKDIR /workdir
-
-ENTRYPOINT ["start.sh"]
