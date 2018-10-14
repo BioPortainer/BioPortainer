@@ -3,7 +3,7 @@ FROM alpine:latest
 ENV GUIserver_version 1.12.0
 COPY .config/start-gui.sh /usr/local/bin/
 
-RUN apk --update upgrade && apk add --update python3-dev py-pip bash libxml2-dev libxslt-dev musl-dev \
+RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-dev libxslt-dev musl-dev \
     linux-headers build-base \
     && pip3 install cwltool tornado typing \
     && apk del build-base && rm -rf /var/cache/apk/* \
