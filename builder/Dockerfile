@@ -26,4 +26,4 @@ EXPOSE 5000
 
 WORKDIR /workdir
 ENTRYPOINT ["start.sh"]
-ENTRYPOINT ["bioportainer.sh"]
+CMD ["bioportainer.sh"]
