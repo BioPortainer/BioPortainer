@@ -9,7 +9,7 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
     && apk del build-base && rm -rf /var/cache/apk/* \
     && cd $HOME \
     && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
-    && mkdir $HOME/script-server/ && cd $HOME/script-server \
+    && mkdir -p $HOME/script-server/runners && cd $HOME/script-server \
     && unzip ../script-server.zip && rm ../script-server.zip \
     && chmod +x $HOME/script-server/launcher.py \
     && chmod +x /usr/local/bin/start.sh
