@@ -4,6 +4,7 @@ ENV GUIserver_version 1.12.0
 COPY .config/start-gui.sh /usr/local/bin/
 
 RUN apk --update upgrade && apk add --update python-dev py-pip bash alpine-sdk libxml2-dev libxslt-dev musl-dev \
+    linux-headers build-base coreutils \
     && pip install cwltool tornado typing \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && cd $HOME \
