@@ -1,4 +1,4 @@
 #!/bin/bash
 
 set -e
-python3 /script-server/launcher.py
+python3 /script-server/launcher.py > gui.log
