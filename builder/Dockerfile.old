@@ -1,12 +1,10 @@
-FROM python:latest
+FROM ubuntu:16.04
 MAINTAINER Fabiano Menegidio 
 
-COPY .config/requirements.txt /
-COPY bioportainer /
 
-RUN apt-get update \
-    && apt-get install -y --allow-unauthenticated --force-yes bash sudo ca-certificates cwltool \
-    && pip install --no-cache-dir -r requirements.txt \
+
+RUN apt-get update && apt-get install -y python3 python3-pip bash sudo ca-certificates build-essential cwltool \
+    && pip3 install --upgrade pip && pip3 install tornado typing \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && cd $HOME \
     && wget https://github.com/bugy/script-server/releases/download/$GUIserver_version/script-server.zip \
