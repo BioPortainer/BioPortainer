@@ -15,10 +15,10 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
     && unzip ../script-server.zip && rm ../script-server.zip \
     && chmod +x /usr/local/bin/start.sh
     
-COPY .config/cwl-runner.json $HOME/script-server/conf/runners/cwl-runner.json
+COPY .config/cwltool.json $HOME/script-server/conf/runners/cwltool.json
 COPY bioportainer $HOME/
 
-VOLUME $HOME/data
+VOLUME /data
 VOLUME $HOME/workdir
 
 EXPOSE 5000
