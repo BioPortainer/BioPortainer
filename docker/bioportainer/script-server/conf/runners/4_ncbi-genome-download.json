@@ -5,15 +5,6 @@
   "working_directory": "/root/workdir",
   "parameters": [
     {
-      "name": "Output folder",
-      "param": "--output-folder",
-      "description": "Output folder",
-      "type": "list",
-      "values": {
-        "script": "ls /root/workdir"
-      }
-    },
-    {
       "name": "Group selection",
       "description": "Group list",
       "type": "multiselect",
@@ -75,6 +66,17 @@
       ]
     },
     {
+      "name": "Refseq category",
+      "param": "--refseq-category",
+      "description": "Refseq category",
+      "type": "list",
+      "values": [
+        "all",
+        "reference",
+        "representative"
+      ]
+    },
+    {
       "name": "Genus",
       "param": "--genus",
       "description": "Genus"
@@ -93,17 +95,6 @@
       "name": "NCBI assembly accession",
       "param": "--assembly-accessions",
       "description": "NCBI assembly accession"
-    },
-    {
-      "name": "Refseq category",
-      "param": "--refseq-category",
-      "description": "Refseq category",
-      "type": "list",
-      "values": [
-        "all",
-        "reference",
-        "representative"
-      ]
     },
     {
       "name": "No Cache",
