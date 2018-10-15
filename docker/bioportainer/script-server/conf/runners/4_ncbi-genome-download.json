@@ -5,11 +5,13 @@
   "working_directory": "/root/workdir",
   "parameters": [
     {
-      "name": "Help",
-      "param": "-h",
-      "description": "Help.",
-      "no_value": true,
-      "default": false
+      "name": "Output folder",
+      "param": "--output-folder",
+      "description": "Output folder",
+      "type": "list",
+      "values": {
+        "script": "ls /root/workdir"
+      }
     },
     {
       "name": "Group selection",
@@ -111,5 +113,12 @@
       "no_value": true,
       "default": true
     },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
   ]
 }
