@@ -1,0 +1,13 @@
+{
+  "name": "3. Create Local Repository",
+  "script_path": "/root/script-server/conf/scripts/mkdir.sh",
+  "description": "Create Local Repository",
+  "working_directory": "/root/workdir",
+  "parameters": [
+    {
+      "name": "Create Local Repository",
+      "description": "Create Local Repository",
+      "required": true 
+    }
+  ]
+}
