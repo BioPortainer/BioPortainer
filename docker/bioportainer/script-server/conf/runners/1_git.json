@@ -1,8 +1,8 @@
 {
   "name": "1. Clone GIT Repository",
-  "script_path": "git",
+  "script_path": "/root/script-server/conf/scripts/git.sh",
   "description": "GIT Clone Repository",
-  "working_directory": "/root/script-server/conf/scripts/git.sh",
+  "working_directory": "/root/workdir",
   "parameters": [
     {
       "name": "GIT Repository",
