@@ -73,5 +73,43 @@
         "contig"
       ]
     },
+    {
+      "name": "Genus",
+      "param": "--genus",
+      "description": "Genus"
+    },
+    {
+      "name": "Species NCBI taxonomy ID",
+      "param": "--species-taxid",
+      "description": "Species NCBI taxonomy ID"
+    },
+    {
+      "name": "NCBI taxonomy ID",
+      "param": "--taxid",
+      "description": "NCBI taxonomy ID"
+    },
+    {
+      "name": "NCBI assembly accession",
+      "param": "--assembly-accessions",
+      "description": "NCBI assembly accession"
+    },
+    {
+      "name": "Refseq category",
+      "param": "--refseq-category",
+      "description": "Refseq category",
+      "type": "list",
+      "values": [
+        "all",
+        "reference",
+        "representative"
+      ]
+    },
+    {
+      "name": "No Cache",
+      "param": "--no-cache",
+      "description": "No Cache.",
+      "no_value": true,
+      "default": true
+    },
   ]
 }
