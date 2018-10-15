@@ -14,7 +14,7 @@ VOLUME $HOME/workdir
 
 RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-dev libxslt-dev musl-dev \
     linux-headers build-base git \
-    && pip3 install cwltool tornado typing snakemake \
+    && pip3 install cwltool tornado typing ncbi-genome-download \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/start.sh \
     && ln -s /root/script-server/conf /data/script-server
