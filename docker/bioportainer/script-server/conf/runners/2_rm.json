@@ -10,7 +10,8 @@
       "type": "list",
       "values": {
         "script": "ls /root/workdir"
-      }
+      },
+      "required": true 
     }
   ]
 }
