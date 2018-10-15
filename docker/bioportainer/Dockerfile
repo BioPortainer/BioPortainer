@@ -7,7 +7,6 @@ COPY bioportainer $HOME/
 COPY bioportainer/templates.json /
 COPY script-server $HOME/script-server
 COPY .config/start.sh /usr/local/bin/
-COPY .config/cwltool.json $HOME/script-server/conf/runners/cwltool.json
 
 WORKDIR $HOME
 VOLUME /data
