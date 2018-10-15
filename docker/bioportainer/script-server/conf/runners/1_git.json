@@ -8,7 +8,20 @@
       "name": "GIT Repository",
       "param": "clone",
       "description": "GIT Repository",
-      "type": "text"
-    }
+      "type": "text",
+      "required": true 
+    },
+    {                  
+      "name": "Origin",   
+      "param": "--origin",                                  
+      "description": "use <name> instead of 'origin' to track upstream",
+      "required": false
+    },
+    {
+      "name": "Branch",
+      "param": "--branch",
+      "description": "checkout <branch> instead of the remote's HEAD",  
+      "required": false
+    } 
   ]
 }
