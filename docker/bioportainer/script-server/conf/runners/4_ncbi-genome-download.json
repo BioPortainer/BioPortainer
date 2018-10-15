@@ -10,6 +10,24 @@
       "description": "Help.",
       "no_value": true,
       "default": false
-    }
+    },
+    {
+      "name": "Group selection",
+      "description": "Group list",
+      "type": "multiselect",
+      "param": "--group",
+      "values": [
+        "all",
+        "archaea",
+        "bacteria",
+        "fungi",
+        "invertebrate",
+        "plant",
+        "protozoa",
+        "vertebrate_mammalian",
+        "vertebrate_other",
+        "viral"
+      ]
+    },
   ]
 }
