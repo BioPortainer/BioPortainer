@@ -17,7 +17,7 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
     && pip3 install cwltool tornado typing snakemake \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/start.sh \
-    && ln -s $HOME/script-server/conf /data/script-server
+    && ln -s /root/script-server/conf /data/script-server
 
 EXPOSE 5000
 EXPOSE 9000
