@@ -10,6 +10,6 @@
       "description": "Help.",
       "no_value": true,
       "default": false
-    },
+    }
   ]
 }
