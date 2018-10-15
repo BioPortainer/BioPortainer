@@ -1,5 +1,5 @@
 {
-  "name": "2. Common Workflow Language Tool",
+  "name": "5. Common Workflow Language Tool",
   "script_path": "cwltool",
   "description": "Common Workflow Language Tool",
   "working_directory": "$HOME/workdir",
