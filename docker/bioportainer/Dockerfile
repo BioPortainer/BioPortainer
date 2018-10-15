@@ -21,7 +21,7 @@ VOLUME $HOME/workdir
 #    && chmod +x /usr/local/bin/start.sh \
 #    && chmod -R +x /root/script-server/conf/scripts/
 
-RUN conda install -y -c bioconda tornado typing ncbi-genome-download cwltool \
+RUN conda install -y -c bioconda tornado typing ncbi-genome-download \
     && chmod +x /usr/local/bin/start.sh \
     && chmod -R +x /root/script-server/conf/scripts/
 
