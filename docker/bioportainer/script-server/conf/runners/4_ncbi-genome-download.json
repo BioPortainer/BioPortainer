@@ -1,1 +1,15 @@
-
+{
+  "name": "4. NCBI Genome Download",
+  "script_path": "/root/script-server/conf/scripts/ncbi-genome-download.sh",
+  "description": "NCBI Genome Download",
+  "working_directory": "/root/workdir",
+  "parameters": [
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    },
+  ]
+}
