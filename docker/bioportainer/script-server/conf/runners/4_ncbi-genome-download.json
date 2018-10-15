@@ -29,5 +29,49 @@
         "viral"
       ]
     },
+    {
+      "name": "Section selection",
+      "description": "Section list",
+      "type": "multiselect",
+      "param": "--section",
+      "values": [
+        "refseq",
+        "genbank"
+      ]
+    },
+    {
+      "name": "File format",
+      "description": "File format list",
+      "type": "multiselect",
+      "param": "--format",
+      "values": [
+        "all",
+        "fasta",
+        "features",
+        "gff",
+        "protein-fasta",
+        "genpept",
+        "wgs",
+        "cds-fasta",
+        "rna-fna",
+        "rna-fasta",
+        "assembly-report",
+        "assembly-stats",
+        "genbank"
+      ]
+    },
+    {
+      "name": "Assembly level",
+      "description": "Assembly level list",
+      "type": "multiselect",
+      "param": "--assembly-level",
+      "values": [
+        "all",
+        "complete",
+        "chromosome",
+        "scaffold",
+        "contig"
+      ]
+    },
   ]
 }
