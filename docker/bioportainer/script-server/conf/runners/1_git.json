@@ -1,0 +1,15 @@
+{
+  "name": "Common Workflow Language Tool",
+  "script_path": "git",
+  "description": "Common Workflow Language Tool",
+  "working_directory": "$HOME/workdir",
+  "parameters": [
+    {
+      "name": "GIT Repository",
+      "param": "clone",
+      "description": "Do not delete Docker container used by jobs after they exit",
+      "no_value": true,
+      "default": true
+    }
+  ]
+}
