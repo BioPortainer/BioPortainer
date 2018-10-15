@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/bin/bash git clone $@
+/bin/bash git $@
