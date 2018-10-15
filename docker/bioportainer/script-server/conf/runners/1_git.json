@@ -1,5 +1,5 @@
 {
-  "name": "1. GIT Clone Repository",
+  "name": "1. Clone GIT Repository",
   "script_path": "git",
   "description": "GIT Clone Repository",
   "working_directory": "/root/workdir",
