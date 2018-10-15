@@ -14,16 +14,13 @@ WORKDIR $HOME
 VOLUME /data
 VOLUME $HOME/workdir
 
-#RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-dev libxslt-dev musl-dev \
-#   linux-headers build-base git \
-#    && pip3 install tornado typing ncbi-genome-download cwltool \
-#    && apk del build-base && rm -rf /var/cache/apk/* \
-#    && chmod +x /usr/local/bin/start.sh \
-#    && chmod -R +x /root/script-server/conf/scripts/
-
-RUN conda install -y -c bioconda tornado typing ncbi-genome-download \
+RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-dev libxslt-dev musl-dev \
+   linux-headers build-base git \
+    && pip3 install tornado typing ncbi-genome-download cwltool \
+    && apk del build-base && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/start.sh \
-    && chmod -R +x /root/script-server/conf/scripts/
+    && chmod -R +x /root/script-server/conf/scripts/ \
+    && cp /root/docker /usr/local/bin/
 
 EXPOSE 5000
 EXPOSE 9000
