@@ -22,5 +22,5 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
 EXPOSE 5000
 EXPOSE 9000
 
-WORKDIR $HOME/workdir
 ENTRYPOINT ["/usr/local/bin/start.sh"]
+WORKDIR $HOME/workdir
