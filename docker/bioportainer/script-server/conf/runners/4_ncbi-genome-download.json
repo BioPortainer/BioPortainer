@@ -17,7 +17,6 @@
       "name": "Group selection",
       "description": "Group list",
       "type": "multiselect",
-      "param": "--group",
       "values": [
         "all",
         "archaea",
