@@ -23,4 +23,4 @@ EXPOSE 5000
 EXPOSE 9000
 
 WORKDIR $HOME/workdir
-ENTRYPOINT ["/usr/local/bin/start.sh"]
+#ENTRYPOINT ["/usr/local/bin/start.sh"]
