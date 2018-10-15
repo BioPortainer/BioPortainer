@@ -1,6 +1,4 @@
-#FROM alpine:latest
-FROM labios/base
-
+FROM alpine:latest
 
 ENV GUIserver_version 1.12.0
 ENV HOME /root
