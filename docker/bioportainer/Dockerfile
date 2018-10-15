@@ -3,11 +3,11 @@ FROM alpine:latest
 ENV GUIserver_version 1.12.0
 ENV HOME /root
 
-COPY .config/start.sh /usr/local/bin/
 COPY bioportainer $HOME/
-COPY script-server $HOME/script-server
-COPY .config/cwltool.json $HOME/script-server/conf/runners/cwltool.json
 COPY bioportainer/templates.json /
+COPY script-server $HOME/script-server
+COPY .config/start.sh /usr/local/bin/
+COPY .config/cwltool.json $HOME/script-server/conf/runners/cwltool.json
 
 WORKDIR $HOME
 
@@ -24,4 +24,4 @@ EXPOSE 5000
 EXPOSE 9000
 
 WORKDIR $HOME/workdir
-#ENTRYPOINT ["/usr/local/bin/start.sh"]
+ENTRYPOINT ["/usr/local/bin/start.sh"]
