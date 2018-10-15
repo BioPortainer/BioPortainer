@@ -2,7 +2,7 @@
   "name": "GIT Clone Repository",
   "script_path": "git",
   "description": "GIT Clone Repository",
-  "working_directory": "$HOME/workdir",
+  "working_directory": "/root/workdir",
   "parameters": [
     {
       "name": "GIT Repository",
