@@ -17,7 +17,7 @@ RUN apk --update upgrade && apk add --update python3-dev py3-pip bash libxml2-de
     && pip3 install cwltool tornado typing ncbi-genome-download \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/start.sh \
-    && chmod +x /data/script-server/conf/scripts/*
+    && chmod -R +x /root/script-server/conf/scripts/
 
 EXPOSE 5000
 EXPOSE 9000
