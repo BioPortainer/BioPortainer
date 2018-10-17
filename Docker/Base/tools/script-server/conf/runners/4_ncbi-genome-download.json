@@ -1,0 +1,114 @@
+{
+  "name": "4. NCBI Genome Download",
+  "script_path": "/root/script-server/conf/scripts/ncbi-genome-download.sh",
+  "description": "NCBI Genome Download",
+  "working_directory": "/root/workdir",
+  "parameters": [
+    {
+      "name": "Group selection",
+      "description": "Group list",
+      "type": "multiselect",
+      "values": [
+        "all",
+        "archaea",
+        "bacteria",
+        "fungi",
+        "invertebrate",
+        "plant",
+        "protozoa",
+        "vertebrate_mammalian",
+        "vertebrate_other",
+        "viral"
+      ]
+    },
+    {
+      "name": "Section selection",
+      "description": "Section list",
+      "type": "multiselect",
+      "param": "--section",
+      "values": [
+        "refseq",
+        "genbank"
+      ]
+    },
+    {
+      "name": "File format",
+      "description": "File format list",
+      "type": "multiselect",
+      "param": "--format",
+      "values": [
+        "all",
+        "fasta",
+        "features",
+        "gff",
+        "protein-fasta",
+        "genpept",
+        "wgs",
+        "cds-fasta",
+        "rna-fna",
+        "rna-fasta",
+        "assembly-report",
+        "assembly-stats",
+        "genbank"
+      ]
+    },
+    {
+      "name": "Assembly level",
+      "description": "Assembly level list",
+      "type": "multiselect",
+      "param": "--assembly-level",
+      "values": [
+        "all",
+        "complete",
+        "chromosome",
+        "scaffold",
+        "contig"
+      ]
+    },
+    {
+      "name": "Refseq category",
+      "param": "--refseq-category",
+      "description": "Refseq category",
+      "type": "list",
+      "values": [
+        "all",
+        "reference",
+        "representative"
+      ]
+    },
+    {
+      "name": "Genus",
+      "param": "--genus",
+      "description": "Genus"
+    },
+    {
+      "name": "Species NCBI taxonomy ID",
+      "param": "--species-taxid",
+      "description": "Species NCBI taxonomy ID"
+    },
+    {
+      "name": "NCBI taxonomy ID",
+      "param": "--taxid",
+      "description": "NCBI taxonomy ID"
+    },
+    {
+      "name": "NCBI assembly accession",
+      "param": "--assembly-accessions",
+      "description": "NCBI assembly accession"
+    },
+    {
+      "name": "No Cache",
+      "param": "--no-cache",
+      "description": "No Cache.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}
