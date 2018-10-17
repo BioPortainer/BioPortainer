@@ -6,6 +6,6 @@ ADD .config/supervisord.conf /etc/
 ADD .config/supervisor.conf /etc/supervisor/conf.d/
 
 RUN apk add --no-cache supervisor \
-    && mkdir /etc/supervisord.d
+    && mkdir /etc/supervisord.d && mkdir /.config
     
 CMD ["/start.sh"]
