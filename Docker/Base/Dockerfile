@@ -21,7 +21,7 @@ RUN apk update && apk add --no-cache supervisor python3-dev py3-pip bash \
     && pip3 install tornado typing ncbi-genome-download cwltool \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/start.sh \
-    && chmod -R +x /root/script-server/conf/scripts/ \
+    && chmod -R +x $HOME/tools/script-server/conf/scripts/ \
     && cp /root/docker /usr/local/bin/
 
 WORKDIR $HOME
