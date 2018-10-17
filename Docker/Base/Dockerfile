@@ -17,7 +17,7 @@ RUN apk update && apk add --no-cache supervisor python3-dev py3-pip bash \
     libxml2-dev libxslt-dev musl-dev linux-headers build-base git \
     && rm -rf /var/cache/apk/* && rm -rf /tmp/ \
     && mkdir /.config \
-    && /.config/supervisord \
+    && mkdir /.config/supervisord \
     && pip3 install tornado typing ncbi-genome-download cwltool \
     && apk del build-base && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/supervisord.sh \
