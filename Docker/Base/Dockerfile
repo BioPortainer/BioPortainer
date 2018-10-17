@@ -7,6 +7,8 @@ ENV HOME /root
 ADD .config/start.sh /
 ADD .config/supervisord.conf /etc/
 ADD .config/supervisor.conf /etc/supervisor/conf.d/
+ADD .config/bioportainer.conf /etc/supervisor/conf.d/
+ADD .config/guiserver.conf /etc/supervisor/conf.d/
 ADD tools/bioportainer $HOME/tools/
 ADD tools/bioportainer/templates.json /
 ADD tools/script-server $HOME/tools/script-server
