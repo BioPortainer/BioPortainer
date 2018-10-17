@@ -9,7 +9,6 @@ ENV PORTUS_VERSION="v2.3" \
     CATALOG_CRON="5.minutes" \
     COMPOSE=1
 
-ADD .config/start.sh /
 ADD .config/supervisord.conf /etc/
 ADD .config/supervisor.conf /etc/supervisor/conf.d/
 ADD .config/bioportainer.conf /etc/supervisor/conf.d/
