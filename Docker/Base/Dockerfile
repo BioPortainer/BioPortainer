@@ -17,7 +17,7 @@ ADD .config/guiserver.conf /etc/supervisor/conf.d/
 ADD tools/bioportainer $HOME/tools/
 ADD tools/bioportainer/templates.json /
 ADD tools/script-server $HOME/tools/script-server
-ADD .config/start.sh /usr/local/bin/
+ADD .config/supervisord.sh /usr/local/bin/
 ADD rootfs /
 
 RUN apk update && apk add --no-cache supervisor python3-dev py3-pip bash \
@@ -30,7 +30,7 @@ RUN apk update && apk add --no-cache supervisor python3-dev py3-pip bash \
     && mkdir /.config \
     && pip3 install tornado typing ncbi-genome-download cwltool \
     && apk del build-base && rm -rf /var/cache/apk/* \
-    && chmod +x /usr/local/bin/start.sh \
+    && chmod +x /usr/local/bin/supervisord.sh \
     && chmod -R +x $HOME/tools/script-server/conf/scripts/ \
     && cp $HOME/tools/docker /usr/local/bin/ \
     && echo 'gem: --verbose --no-document' > /etc/gemrc \
@@ -54,4 +54,4 @@ EXPOSE 443
 EXPOSE 5000
 EXPOSE 9000
     
-CMD ["/start.sh"]
+CMD ["/supervisord.sh"]
