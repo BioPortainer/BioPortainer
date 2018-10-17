@@ -55,4 +55,4 @@ EXPOSE 443
 EXPOSE 5000
 EXPOSE 9000
     
-CMD ["/supervisord.sh"]
+CMD ["/usr/local/bin/supervisord.sh"]
