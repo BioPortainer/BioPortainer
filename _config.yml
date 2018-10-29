@@ -1,5 +1,5 @@
 repository: LaBiOS/bioportainer
-theme: jekyll-theme-minimal
+theme: jekyll-theme-dinky
 name: BioPortainer
 title: BioPortainer
 description: a Docker Manager UI for Bioinformatics
