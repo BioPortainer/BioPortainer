@@ -3,8 +3,8 @@ FROM alpine:latest
 ENV HOME /root
 
 ADD .config/start.sh /start.sh
-ADD tools/bioportainer $HOME/tools/
-ADD tools/bioportainer/templates.json /
+ADD .tools/bioportainer $HOME/tools/
+ADD .tools/bioportainer/templates.json /
 ADD .config/supervisord.conf /.config/
 ADD .config/bioportainer.conf /etc/supervisor/conf.d/bioportainer.conf
 
