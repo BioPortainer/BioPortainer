@@ -1,9 +1,17 @@
 FROM alpine:latest
 
 ENV HOME /root
+
+ADD .config/start.sh /start.sh
 ADD tools/bioportainer $HOME/tools/
 ADD tools/bioportainer/templates.json /
-RUN apk --update upgrade && apk add ca-certificates bash && rm -rf /var/cache/apk/*
+ADD .config/supervisord.conf /.config/
+ADD .config/bioportainer.conf /etc/supervisor/conf.d/bioportainer.conf
+
+RUN apk --update upgrade && apk add --no-cache ca-certificates bash supervisor \
+    && rm -rf /var/cache/apk/* \
+    && chmod +x /start.sh && mkdir -p /.config/supervisord
+
 WORKDIR /
 EXPOSE 9000
-ENTRYPOINT ["/root/tools/bioportainer"]
+CMD ["/start.sh"]
