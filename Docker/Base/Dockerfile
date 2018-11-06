@@ -14,5 +14,6 @@ RUN apk --update upgrade && apk add --no-cache ca-certificates bash supervisor \
 
 WORKDIR /
 EXPOSE 9000
+EXPOSE 9001
 VOLUME /data
 CMD ["/start.sh"]
