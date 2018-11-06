@@ -25,6 +25,7 @@ services:
     volumes:
       - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
       - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
+      - ${PWD}/bioportainer/bioportainer_examples:/root/workdir/examples
       
   bioportainer-watchtower:
     image: v2tec/watchtower
