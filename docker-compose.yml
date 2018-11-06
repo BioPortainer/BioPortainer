@@ -1,16 +1,31 @@
 version: '2'
 
 services:
-  portainer:
+  bioportainer:
     image: bioportainer/bioportainer
+    container_name: "bioportainer-base"
     ports:
       - "9000:9000"
-    command: --templates http://bioportainer.ml/templates.json
+      - "9001:9001"
     networks:
-      - bioportainer-net
+      - local
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ${PWD}/bioportainer_data:/data
+      - ${PWD}/bioportainer/bioportainer_data:/data
+      
+  pipeline-runner:
+    image: bioportainer/pipeline-runner
+    container_name: "bioportainer-pipeline-runner"
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+      - "5002:5002"
+    networks:
+      - local
+    volumes:
+      - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
+      - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
 
 networks:
-  bioportainer-net:
+  local:
+    driver: bridge
