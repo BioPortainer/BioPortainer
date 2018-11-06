@@ -13,7 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${PWD}/bioportainer/bioportainer_data:/data
       
-  pipeline-runner:
+  bioportainer-pipeline-runner:
     image: bioportainer/pipeline-runner
     container_name: "bioportainer-pipeline-runner"
     ports:
@@ -25,6 +25,15 @@ services:
     volumes:
       - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
       - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
+      
+  bioportainer-watchtower:
+    image: v2tec/watchtower
+    container_name: "bioportainer-watchtower"
+    command: --cleanup portainer-base bioportainer-watchtower bioportainer-pipeline-runner
+    networks:
+      - local
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   local:
