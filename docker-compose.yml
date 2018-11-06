@@ -16,6 +16,7 @@ services:
   bioportainer-pipeline-runner:
     image: bioportainer/pipeline-runner
     container_name: "bioportainer-pipeline-runner"
+    privileged: true
     ports:
       - "5000:5000"
       - "5001:5001"
