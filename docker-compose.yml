@@ -27,7 +27,6 @@ services:
       - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
       - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
       - ${PWD}/bioportainer/bioportainer_examples:/root/workdir/examples
-      - ${PWD}/bioportainer/bioportainer_supervisord:/etc/supervisor/conf.d/
       - ${PWD}/bioportainer/bioportainer_nextflow:/root/workdir/.nextflow/assets/nextflow-io/
       
   bioportainer-watchtower:
