@@ -8,7 +8,7 @@ ADD .tools/bioportainer/templates.json /
 ADD .config/supervisord.conf /.config/
 ADD .config/bioportainer.conf /etc/supervisor/conf.d/bioportainer.conf
 
-RUN apk --update upgrade && apk add --no-cache ca-certificates bash supervisor \
+RUN apk --update upgrade && apk add --no-cache ca-certificates bash supervisor tini \
     && rm -rf /var/cache/apk/* \
     && chmod +x /start.sh && mkdir -p /.config/supervisord
 
@@ -16,4 +16,5 @@ WORKDIR /
 EXPOSE 9000
 EXPOSE 9001
 VOLUME /data
+ENTRYPOINT ["/tini", "--"]
 CMD ["/start.sh"]
