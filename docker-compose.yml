@@ -4,6 +4,7 @@ services:
   bioportainer:
     image: bioportainer/bioportainer
     container_name: "bioportainer-base"
+    stdin_open: true
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -17,6 +18,7 @@ services:
     image: bioportainer/pipeline-runner
     container_name: "bioportainer-pipeline-runner"
     privileged: true
+    stdin_open: true
     ports:
       - "5000:5000"
       - "5001:5001"
@@ -26,11 +28,11 @@ services:
     volumes:
       - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
       - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
-      - ${PWD}/bioportainer/bioportainer_examples:/root/workdir/examples
       - ${PWD}/bioportainer/bioportainer_nextflow:/root/workdir/.nextflow/assets/nextflow-io/
       
   bioportainer-watchtower:
     image: v2tec/watchtower
+    stdin_open: true
     container_name: "bioportainer-watchtower"
     command: --cleanup portainer-base bioportainer-watchtower bioportainer-pipeline-runner
     networks:
