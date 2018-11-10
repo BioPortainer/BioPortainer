@@ -5,6 +5,7 @@ services:
     image: bioportainer/bioportainer
     container_name: "bioportainer-base"
     stdin_open: true
+    restart: always
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -19,6 +20,7 @@ services:
     container_name: "bioportainer-pipeline-runner"
     privileged: true
     stdin_open: true
+    restart: always
     ports:
       - "5000:5000"
       - "5001:5001"
@@ -33,6 +35,7 @@ services:
   bioportainer-watchtower:
     image: v2tec/watchtower
     stdin_open: true
+    restart: always
     container_name: "bioportainer-watchtower"
     command: --cleanup portainer-base bioportainer-watchtower bioportainer-pipeline-runner
     networks:
