@@ -43,3 +43,9 @@ services:
 networks:
   local:
     driver: bridge
+
+volumes:
+    bioportainer_data:
+    bioportainer_notebooks:
+    bioportainer_workdir:
+    bioportainer_nextflow:
