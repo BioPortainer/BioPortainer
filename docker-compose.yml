@@ -2,7 +2,7 @@ version: '2'
 
 services:
   bioportainer-panel:
-    image: bioportainer/bioportainer
+    image: bioportainer/bioportainer-panel
     container_name: "bioportainer-panel"
     stdin_open: true
     restart: always
@@ -23,13 +23,12 @@ services:
     restart: always
     ports:
       - "5000:5000"
-      - "5001:5001"
-      - "5002:5002"
+      - "9001:9001"
+      - "8888:8888"
     networks:
       - bioportainer-local
     volumes:
       - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
-      - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
       - ${PWD}/bioportainer/bioportainer_nextflow:/root/workdir/.nextflow/assets/nextflow-io/
       
   bioportainer-watchtower:
@@ -49,6 +48,5 @@ networks:
 
 volumes:
     bioportainer_data:
-    bioportainer_notebooks:
     bioportainer_workdir:
     bioportainer_nextflow:
