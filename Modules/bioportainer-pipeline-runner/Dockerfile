@@ -31,8 +31,9 @@ RUN apk --update add --no-cache \
     build-base bash iptables ca-certificates e2fsprogs docker git libstdc++ curl \
     tmux util-linux screen \
     && rm -rf /var/cache/apk/* \
-    && ln -s $HOME/workdir/.nextflow/assets/nextflow-io $HOME/workdir/data \
+    && mkdir -p / $HOME/workdir \
     && mkdir -p /.config/supervisord \
+    && ln -s $HOME/workdir/.nextflow/assets/nextflow-io $HOME/workdir/data \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
@@ -131,5 +132,5 @@ WORKDIR $HOME/workdir/data
 EXPOSE 9002
 EXPOSE 8888
 EXPOSE 5000
-VOLUME ["$HOME/workdir/data, "/var/lib/docker"]
+VOLUME ["$HOME/workdir/data", "/var/lib/docker"]
 CMD ["/start.sh"]
