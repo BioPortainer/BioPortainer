@@ -1,0 +1,66 @@
+{
+  "name": "07. NextFlow Pipeline Clean",
+  "script_path": "/GUI/conf/scripts/nextflow-clean.sh",
+  "description": "NextFlow Pipeline Clean",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Project Name",
+      "description": "Use '.' if your Project was obtained through option (1) of the menu. If it was obtained by option (12), enter the name of the Project that can be obtained in option (10).",
+      "required": true
+    },
+    {
+      "name": "Clean After",
+      "param": "-after",
+      "description": "Clean up runs executed after the specified one",
+      "required": false
+    },
+    {
+      "name": "Clean Before",
+      "param": "-before",
+      "description": "Clean up runs executed before the specified one",
+      "required": false
+    },
+    {
+      "name": "Clean But",
+      "param": "-but",
+      "description": "Clean up all runs except the specified one",
+      "required": false
+    },
+    {
+      "name": "Dry Run",
+      "param": "-dry-run",
+      "description": "Print names of file to be removed without deleting them.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Force",
+      "param": "-force",
+      "description": "Force clean command.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Keep Logs",
+      "param": "-keep-logs",
+      "description": "Removes only temporary files but retains execution log entries and metadata.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Quiet",
+      "param": "-quiet",
+      "description": "Do not print names of files removed",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

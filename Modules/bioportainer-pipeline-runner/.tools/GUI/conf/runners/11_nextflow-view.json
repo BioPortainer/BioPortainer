@@ -1,0 +1,34 @@
+{
+  "name": "11. NextFlow Pipeline View",
+  "script_path": "/GUI/conf/scripts/nextflow-view.sh",
+  "description": "NextFlow Pipeline View",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Project Name",
+      "description": "Project Name.",
+      "required": true
+    },
+    {
+      "name": "Repository Content",
+      "param": "-l",
+      "description": "List repository content.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Hide Header Line",
+      "param": "-q",
+      "description": "Hide header line.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 version: '2'
 
 services:
-  bioportainer:
+  bioportainer-panel:
     image: bioportainer/bioportainer
-    container_name: "bioportainer-base"
+    container_name: "bioportainer-panel"
     stdin_open: true
     restart: always
     ports:
       - "9000:9000"
       - "9001:9001"
     networks:
-      - local
+      - bioportainer-local
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${PWD}/bioportainer/bioportainer_data:/data
@@ -26,7 +26,7 @@ services:
       - "5001:5001"
       - "5002:5002"
     networks:
-      - local
+      - bioportainer-local
     volumes:
       - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
       - ${PWD}/bioportainer/bioportainer_notebooks:/root/workdir/notebooks
@@ -39,12 +39,12 @@ services:
     container_name: "bioportainer-watchtower"
     command: --cleanup portainer-base bioportainer-watchtower bioportainer-pipeline-runner
     networks:
-      - local
+      - bioportainer-local
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
-  local:
+  bioportainer-local:
     driver: bridge
 
 volumes:

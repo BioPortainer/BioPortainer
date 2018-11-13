@@ -1,0 +1,51 @@
+{
+  "name": "01. Clone GIT Repository",
+  "script_path": "/GUI/conf/scripts/git-clone.sh",
+  "description": "GIT Clone Repository",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "GIT Repository",
+      "param": "clone",
+      "description": "GIT Repository",
+      "type": "text",
+      "required": true 
+    },
+    {                  
+      "name": "Origin",                                    
+      "description": "use <name> instead of 'origin' to track upstream",
+      "required": false
+    },
+    {
+      "name": "Branch",
+      "description": "checkout <branch> instead of the remote's HEAD",  
+      "required": false
+    },
+    {                  
+      "name": "Others Parameters",
+      "description": "others parameters",
+      "required": false
+    },
+    {
+      "name": "Progress",
+      "param": "--progress",
+      "description": "Progress report.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Verbose",
+      "param": "--verbose",
+      "description": "Verbose.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

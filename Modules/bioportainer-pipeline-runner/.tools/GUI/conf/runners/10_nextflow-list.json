@@ -1,0 +1,15 @@
+{
+  "name": "10. NextFlow Pipeline List",
+  "script_path": "/GUI/conf/scripts/nextflow-list.sh",
+  "description": "NextFlow Pipeline List",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

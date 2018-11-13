@@ -1,0 +1,49 @@
+{
+  "name": "08. NextFlow Pipeline Config",
+  "script_path": "/GUI/conf/scripts/nextflow-config.sh",
+  "description": "NextFlow Pipeline Config",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Profile",
+      "param": "-profile",
+      "description": "Choose a configuration profile",
+      "required": false
+    },
+    {
+      "name": "Flat",
+      "param": "-flat",
+      "description": "Print config using flat notation.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Properties",
+      "param": "-properties",
+      "description": "Prints config using Java properties notation.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Show Profiles",
+      "param": "-show-profiles",
+      "description": "Show all configuration profiles.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Sort",
+      "param": "-sort",
+      "description": "Sort config attributes",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

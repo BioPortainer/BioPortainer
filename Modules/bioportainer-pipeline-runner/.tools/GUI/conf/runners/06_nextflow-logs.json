@@ -1,0 +1,71 @@
+{
+  "name": "06. NextFlow Pipeline Logs",
+  "script_path": "/GUI/conf/scripts/nextflow-logs.sh",
+  "description": "NextFlow Pipeline Logs",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Logs After",
+      "param": "-after",
+      "description": "Show log entries for runs executed after the specified one",
+      "required": false
+    },
+    {
+      "name": "Logs Before",
+      "param": "-before",
+      "description": "Show log entries for runs executed before the specified one",
+      "required": false
+    },
+    {
+      "name": "Logs But",
+      "param": "-but",
+      "description": "Show log entries of all runs except the specified one",
+      "required": false
+    },
+    {
+      "name": "Fields List Comma",
+      "param": "-fields",
+      "description": "Comma separated list of fields to include in the printed log -- Use the '-l' option to show the list of available fields",
+      "required": false
+    },
+    {
+      "name": "Template",
+      "param": "-template",
+      "description": "Text template used to each record in the log",
+      "required": false
+    },
+    {
+      "name": "Filter",
+      "param": "-template",
+      "description": "Filter log entries by a custom expression e.g. process =~ /foo.*/ && status == 'COMPLETED'",
+      "required": false
+    },
+    {
+      "name": "Separate Column Caracter",
+      "param": "-s",
+      "description": "Character used to separate column values",
+      "required": false
+    },
+    {
+      "name": "List Fields",
+      "param": "-list-fields",
+      "description": "Show all available fields.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Quiet",
+      "param": "-quiet",
+      "description": "Show only run names",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

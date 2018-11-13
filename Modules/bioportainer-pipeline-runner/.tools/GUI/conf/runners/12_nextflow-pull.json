@@ -1,0 +1,45 @@
+{
+  "name": "12. NextFlow Pipeline Pull",
+  "script_path": "/GUI/conf/scripts/nextflow-pull.sh",
+  "description": "NextFlow Pipeline Pull",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Project Name",
+      "description": "Project Name.",
+      "required": true
+    },
+    {
+      "name": "Hub",
+      "param": "-hub",
+      "description": "Service hub where the project is hosted",
+      "required": false
+    },
+    {
+      "name": "Revision",
+      "param": "-revision",
+      "description": "Revision of the project to run (either a git branch, tag or commit SHA number)",
+      "required": false
+    },
+    {
+      "name": "Private Repository User",
+      "param": "-user",
+      "description": "Private repository user name",
+      "required": false
+    },
+    {
+      "name": "Update All Projects",
+      "param": "-all",
+      "description": "Update all downloaded projects.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "03. GIT Local Repository Remove",
+  "script_path": "/GUI/conf/scripts/rm.sh",
+  "description": "GIT Local Repository Remove",
+  "working_directory": "/root/workdir/data/",
+  "parameters": [
+    {
+      "name": "Remove Repository",
+      "description": "List Repositories",
+      "type": "list",
+      "values": {
+        "script": "ls /root/workdir/data/"
+      },
+      "required": true 
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "09. NextFlow Pipeline Info",
+  "script_path": "/GUI/conf/scripts/nextflow-info.sh",
+  "description": "NextFlow Pipeline Drop",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Show detailed info",
+      "param": "-d",
+      "description": "Show detailed information",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}
