@@ -7,10 +7,10 @@ services:
     restart: always
     ports:
       - "9000:9000"
-      - "9001:9001"
+      - "6000:6000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ${PWD}/bioportainer/bioportainer_data:/data
+      - bioportainer_data:/data
     networks:
       - bioportainer-local
     deploy:
@@ -18,6 +18,38 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == manager]
+
+  bioportainer-pipeline-runner:
+    image: portainer/portainer
+    stdin_open: true
+    restart: always
+    ports:
+      - "5000:5000"
+      - "8888:8888"
+      - "7000:7000"
+    volumes:
+      - bioportainer_workdir:/root/workdir/data
+      - bioportainer_nextflow:/root/workdir/.nextflow/assets/nextflow-io/
+    networks:
+      - bioportainer-local
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
+        
+  bioportainer-watchtower:
+    image: v2tec/watchtower
+    stdin_open: true
+    restart: always
+    command: --cleanup portainer-base bioportainer-watchtower bioportainer-pipeline-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - bioportainer-local
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
         
 networks:
   bioportainer-local:
