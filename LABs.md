@@ -80,12 +80,7 @@ $ docker node ps
 ##### 3. Download BioPortainer image from the Docker Hub and create the BioPortainer service, by typing:  
 
 ```
-$ docker service create \
-      --name BioPortainer \
-      -p 9000:9000 \
-      --constraint 'node.role == manager' \
-      --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
-      bioportainer/bioportainer -H unix:///var/run/docker.sock
+
 ```
 
 ##### 4. Confirm creation of the BioPortainer container, by typing:
