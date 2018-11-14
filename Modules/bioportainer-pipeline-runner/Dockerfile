@@ -129,7 +129,7 @@ RUN set -ex \
   
 WORKDIR $HOME/workdir/data
 
-EXPOSE 9002
+EXPOSE 7000
 EXPOSE 8888
 EXPOSE 5000
 VOLUME ["$HOME/workdir/data", "/var/lib/docker"]
