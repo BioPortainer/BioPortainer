@@ -6,7 +6,7 @@
   "parameters": [
     {
       "name": "NextFlow File or Project",
-      "description": "Select the file '.nf' if the Project was obtained by option (1). If (12) was used to download a Project, enter the name of the Project, which can be obtained by option (10).",
+      "description": "Enter the '.nf' filename for the pipeline, if it is different from main.nf.",
       "default": "main.nf",
       "required": true
     },
