@@ -4,7 +4,6 @@ services:
   bioportainer-panel:
     image: bioportainer/bioportainer-panel
     stdin_open: true
-    restart: always
     ports:
       - "9000:9000"
       - "6000:6000"
@@ -22,7 +21,7 @@ services:
   bioportainer-pipeline-runner:
     image: bioportainer/bioportainer-pipeline-runner
     stdin_open: true
-    restart: always
+    privileged: true
     ports:
       - "5000:5000"
       - "8888:8888"
@@ -41,7 +40,6 @@ services:
   bioportainer-watchtower:
     image: v2tec/watchtower
     stdin_open: true
-    restart: always
     command: --cleanup portainer-base bioportainer-watchtower bioportainer-pipeline-runner
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
