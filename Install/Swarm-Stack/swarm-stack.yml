@@ -44,7 +44,6 @@ services:
     volumes:
       - bioportainer_workdir:/root/workdir/data
       - bioportainer_nextflow:/root/workdir/.nextflow/assets/nextflow-io/
-      - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - agent_network
     deploy:
