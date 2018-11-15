@@ -20,7 +20,7 @@ services:
         constraints: [node.role == manager]
 
   bioportainer-pipeline-runner:
-    image: portainer/portainer
+    image: bioportainer/bioportainer-pipeline-runner
     stdin_open: true
     restart: always
     ports:
