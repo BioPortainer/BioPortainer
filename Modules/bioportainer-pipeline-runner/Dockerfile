@@ -130,5 +130,5 @@ WORKDIR $HOME/workdir/data
 EXPOSE 7000
 EXPOSE 8888
 EXPOSE 5000
-VOLUME ["$HOME/workdir/.nextflow/assets/nextflow-io", "/var/lib/docker"]
+VOLUME ["/root/.nextflow/assets/nextflow-io", "/var/lib/docker"]
 CMD ["/start.sh"]
