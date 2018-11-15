@@ -1,5 +1,5 @@
 {
-  "name": "13. NextFlow Pipeline Drop",
+  "name": "14. NextFlow Pipeline Drop",
   "script_path": "/GUI/conf/scripts/nextflow-drop.sh",
   "description": "NextFlow Pipeline Drop",
   "working_directory": "/root/workdir/data",
