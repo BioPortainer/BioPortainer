@@ -13,7 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/volumes:/var/lib/docker/volumes
     networks:
-      - bioportainer-local
+      - agent_network
     deploy:
       mode: global
       placement:
@@ -22,15 +22,13 @@ services:
   bioportainer-panel:
     image: bioportainer/bioportainer-panel
     command: -H tcp://tasks.agent:9001 --tlsskipverify
-    stdin_open: true
     ports:
       - "9000:9000"
       - "6000:6000"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - bioportainer_data:/data
+      - portainer_data:/data
     networks:
-      - bioportainer-local
+      - agent_network
     deploy:
       mode: replicated
       replicas: 1
@@ -38,9 +36,9 @@ services:
         constraints: [node.role == manager]
 
 networks:
-  bioportainer-local:
+  agent_network:
     driver: overlay
     attachable: true
 
 volumes:
-    bioportainer_data:
+  portainer_data:
