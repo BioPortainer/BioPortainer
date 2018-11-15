@@ -1,12 +1,12 @@
 {
-  "name": "13. NextFlow Pipeline Runner",
+  "name": "05. NextFlow Pipeline Runner",
   "script_path": "/GUI/conf/scripts/nextflow-run.sh",
   "description": "NextFlow Pipeline Runner",
   "working_directory": "/root/workdir/data",
   "parameters": [
     {
       "name": "NextFlow Project",
-      "description": "Enter the name of the Project, which can be obtained by option (10).",
+      "description": "Enter the name of the Project.",
       "required": true
     },
     {
