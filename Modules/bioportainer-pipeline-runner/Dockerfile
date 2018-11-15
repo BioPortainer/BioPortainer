@@ -28,7 +28,7 @@ ADD .config/gui.conf /etc/supervisor/conf.d/gui.conf
 ADD .config/jupyter.conf /etc/supervisor/conf.d/jupyter.conf
 
 RUN apk --update add --no-cache \
-    build-base bash iptables ca-certificates e2fsprogs docker git libstdc++ curl \
+    build-base bash iptables ca-certificates e2fsprogs docker git libstdc++ curl xterm \
     tmux util-linux screen \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /.config/supervisord \
