@@ -33,9 +33,10 @@ services:
     networks:
       - bioportainer-local
     deploy:
-      mode: global
+      mode: replicated
+      replicas: 1
       placement:
-        constraints: [node.platform.os == linux]
+        constraints: [node.role == manager]
         
   bioportainer-watchtower:
     image: v2tec/watchtower
@@ -47,9 +48,10 @@ services:
     networks:
       - bioportainer-local
     deploy:
-      mode: global
+      mode: replicated
+      replicas: 1
       placement:
-        constraints: [node.platform.os == linux]
+        constraints: [node.role == manager]
         
 networks:
   bioportainer-local:
