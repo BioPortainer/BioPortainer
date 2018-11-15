@@ -1,5 +1,5 @@
 {
-  "name": "05. NextFlow Pipeline Runner (GIT Version)",
+  "name": "05. NextFlow Pipeline Runner (GIT)",
   "script_path": "/GUI/conf/scripts/nextflow-run.sh",
   "description": "NextFlow Pipeline Runner (GIT Version)",
   "working_directory": "/root/workdir/data",
