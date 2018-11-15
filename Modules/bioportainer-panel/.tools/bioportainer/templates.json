@@ -14,7 +14,7 @@
     "ports": [
       "5000/tcp", "8888/tcp", "7000/tcp"
     ],
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/.nextflow/assets/"}]
+    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/.nextflow/assets"}]
   },
   {
     "type": 1,
