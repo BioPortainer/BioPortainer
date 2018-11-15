@@ -30,7 +30,7 @@ ADD .config/jupyter.conf /etc/supervisor/conf.d/jupyter.conf
 
 RUN apk --update add --no-cache \
     build-base bash iptables ca-certificates e2fsprogs docker git libstdc++ curl \
-    tmux util-linux screen xterm \
+    util-linux screen coreutils \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
