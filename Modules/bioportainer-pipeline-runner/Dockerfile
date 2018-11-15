@@ -32,6 +32,8 @@ RUN apk --update add --no-cache \
     tmux util-linux screen \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /.config/supervisord \
+    && mkdir -p $HOME/workdir /
+    && ln -s /root/.nextflow/assets/nextflow-io $HOME/workdir/data /
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
@@ -130,5 +132,5 @@ WORKDIR $HOME/workdir/data
 EXPOSE 7000
 EXPOSE 8888
 EXPOSE 5000
-VOLUME ["/root/.nextflow/assets/nextflow-io", "/var/lib/docker"]
+VOLUME ["$HOME/workdir/data", "/var/lib/docker"]
 CMD ["/start.sh"]
