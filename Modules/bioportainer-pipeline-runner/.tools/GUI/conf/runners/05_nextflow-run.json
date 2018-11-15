@@ -1,7 +1,7 @@
 {
-  "name": "05. NextFlow Pipeline Runner",
+  "name": "05. NextFlow Pipeline Runner (GIT Version)",
   "script_path": "/GUI/conf/scripts/nextflow-run.sh",
-  "description": "NextFlow Pipeline Runner",
+  "description": "NextFlow Pipeline Runner (GIT Version)",
   "working_directory": "/root/workdir/data",
   "parameters": [
     {
