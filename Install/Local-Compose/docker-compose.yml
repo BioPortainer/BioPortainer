@@ -16,7 +16,7 @@ services:
       - ${PWD}/bioportainer/bioportainer_data:/data
       
   bioportainer-pipeline-runner:
-    image: bioportainer/pipeline-runner
+    image: bioportainer/bioportainer-pipeline-runner
     container_name: "bioportainer-pipeline-runner"
     privileged: true
     stdin_open: true
