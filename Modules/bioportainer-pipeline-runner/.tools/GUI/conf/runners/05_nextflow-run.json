@@ -6,7 +6,7 @@
   "parameters": [
     {
       "name": "NextFlow File or Project",
-      "description": "Enter the '.nf' filename for the pipeline, if it is different from main.nf.",
+      "description": "Enter the '.nf' filename for the pipeline, if it is different from main.nf. This option should be used if the pipeline has not been downloaded by option (12), but by option (1).",
       "default": "main.nf",
       "required": true
     },
