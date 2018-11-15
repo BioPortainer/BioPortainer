@@ -15,7 +15,8 @@ ENV SHELL=/bin/bash \
     GLIBC_VERSION=2.28-r0 \
     LANG=C.UTF-8 \
     JUPYTER_TYPE=notebook \
-    JUPYTER_PORT=8888
+    JUPYTER_PORT=8888 \
+    TERM=xterm
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
