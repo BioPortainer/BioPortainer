@@ -16,4 +16,4 @@ WORKDIR /
 EXPOSE 9000
 EXPOSE 6000
 VOLUME /data
-CMD ["/start.sh"]
+ENTRYPOINT ["/root/tools/bioportainer"]
