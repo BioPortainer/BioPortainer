@@ -34,7 +34,7 @@ RUN apk --update add --no-cache \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
-    && ln -s /root/.nextflow/assets/nextflow-io $HOME/workdir/data \
+    && ln -s /root/.nextflow/assets $HOME/workdir/data \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
