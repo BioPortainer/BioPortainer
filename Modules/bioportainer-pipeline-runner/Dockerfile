@@ -1,5 +1,8 @@
 FROM python:alpine
 
+ARG USER_ID
+ARG GROUP_ID
+
 ############### Environment config
 ENV SHELL=/bin/bash \
     HOME=/root \
@@ -127,6 +130,23 @@ RUN set -ex \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
+  
+RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
+    userdel -f www-runner &&\
+    if getent group www-runner ; then groupdel www-runner; fi &&\
+    groupadd -g ${GROUP_ID} www-runner &&\
+    useradd -l -u ${USER_ID} -g www-runner www-runner &&\
+    install -d -m 0755 -o www-runner -g www-runner $HOME/workdir/data &&\
+    chown --changes --silent --no-dereference --recursive \
+          --from=33:33 ${USER_ID}:${GROUP_ID} \
+        $HOME/workdir/data \
+        /.config/supervisord \
+        /GUI/conf/scripts/ \
+        /GUI/conf/runners/ \
+        /root/.nextflow/assets \
+;fi
+
+USER www-runner
   
 WORKDIR $HOME/workdir/data
 
