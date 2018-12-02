@@ -134,6 +134,7 @@ RUN set -ex \
   
 RUN addgroup -g ${GROUP_ID} -S ${USER} \
     && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $WORKDIR -D -G ${USER} \
+    && addgroup -S docker && usermod -aG docker ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && chown --changes --silent --no-dereference --recursive \
         ${USER_ID}:${GROUP_ID} \
