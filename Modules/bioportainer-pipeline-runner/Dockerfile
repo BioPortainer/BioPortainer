@@ -131,7 +131,7 @@ RUN set -ex \
 
 USER $USER
 
-WORKDIR $HOME/workdir/data
+WORKDIR $HOME/workdir
 
 EXPOSE 7000
 EXPOSE 8888
