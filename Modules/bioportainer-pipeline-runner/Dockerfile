@@ -133,7 +133,7 @@ RUN set -ex \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
 RUN addgroup -g ${GROUP_ID} -S ${USER} \
-    && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $WORKDIR -D -G ${USER},docker \
+    && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $WORKDIR -D -G ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && chown --changes --silent --no-dereference --recursive \
         ${USER_ID}:${GROUP_ID} \
