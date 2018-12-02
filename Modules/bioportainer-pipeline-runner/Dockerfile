@@ -134,7 +134,10 @@ RUN addgroup -g ${GROUP_ID} -S ${USER} \
     && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $HOME/workdir -D -G ${USER} \
     && usermod -aG docker ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && ln -s /root/.nextflow/assets $HOME/workdir/data
+    && ln -s /root/.nextflow/assets $HOME/workdir/data \
+    && chown -R ${USER_ID}:${GROUP_ID} \
+        $HOME/workdir \
+        /root/.nextflow/assets
 
 WORKDIR $HOME/workdir/data
 
