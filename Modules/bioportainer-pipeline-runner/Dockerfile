@@ -132,7 +132,7 @@ RUN set -ex \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
-RUN groupadd -g ${GROUP_ID} ${USER} \
+RUN addgroup -g ${GROUP_ID} -S ${USER} \
     && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $WORKDIR -D $USER -G ${GROUP_ID},docker \
     && echo "$USER:$PASS" | chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
