@@ -1,7 +1,7 @@
 FROM python:alpine
 
 ENV USER=www-runner \
-    HOME=/headless \
+    HOME=/root \
     UID=1000 \
     SHELL=/bin/bash \
     JAVA_VERSION_MAJOR=8 \
@@ -42,13 +42,9 @@ RUN apk --update add --no-cache \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
-    && ln -s /root/.nextflow/assets $HOME/workdir/data \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
-    && chmod +x /usr/local/bin/start-notebook.sh \
-    && chown -R $UID:$UID $HOME/workdir && chown -R -R $UID:$UID /root/.nextflow/assets \
-    && chown -R -R $UID:$UID /.config \
-    && echo "$HOME/workdir/data" > /.work
+    && chmod +x /usr/local/bin/start-notebook.sh
     
  ######################################################
 # Install Java 8
@@ -129,7 +125,11 @@ RUN set -ex \
            /tmp/* /var/cache/apk/* \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
-  && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
+  && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin \
+  && ln -s /root/.nextflow/assets $HOME/workdir/data \
+  && chown -R $UID:$UID $HOME/workdir && chown -R $UID:$UID /root/.nextflow/assets \
+  && chown -R -R $UID:$UID /.config \
+  && echo "$HOME/workdir/data" > /.work
 
 USER $USER
 
