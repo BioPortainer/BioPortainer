@@ -144,6 +144,7 @@ RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
         /GUI/conf/scripts/ \
         /GUI/conf/runners/ \
         /root/.nextflow/assets \
+        /start.sh \
 ;fi
 
 USER www-runner
