@@ -38,7 +38,9 @@ RUN apk --update add --no-cache \
     && python3 -m ipykernel install --user \
     && python3 -m bash_kernel.install --user \
     && apk del build-base && rm -rf /var/cache/apk/* \
-    && adduser -s /bin/bash -u $UID -h $HOME -D $USER \
+    && addgroup -g $UID -S ${USER} \
+    && adduser -s /bin/bash -u $UID -S ${USER} -h $HOME/workdir -D -G $USER \
+    && usermod -aG docker ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
