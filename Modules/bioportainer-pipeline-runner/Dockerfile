@@ -16,10 +16,7 @@ ENV SHELL=/bin/bash \
     LANG=C.UTF-8 \
     JUPYTER_TYPE=notebook \
     JUPYTER_PORT=8888 \
-    NXF_DEBUG=0 \
-    UID=1000 \
-    GID=1000 \
-    USER=www-runner
+    NXF_DEBUG=0
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
@@ -37,6 +34,7 @@ RUN apk --update add --no-cache \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
+    && ln -s /root/.nextflow/assets $HOME/workdir/data \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
@@ -129,13 +127,6 @@ RUN set -ex \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
-  
-RUN addgroup -g $GID -S ${USER} \
-    && adduser -s /bin/bash -u $UID -S ${USER} -h $HOME/workdir -D -G ${USER} \
-    && usermod -aG docker ${USER} \
-    && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && ln -s /root/.nextflow/assets $HOME/workdir/data \
-    && chown -R $UID:$GID $HOME/workdir
     
 WORKDIR $HOME/workdir/data
 
@@ -144,4 +135,3 @@ EXPOSE 8888
 EXPOSE 5000
 VOLUME ["$HOME/workdir/data", "/var/lib/docker"]
 CMD ["/start.sh"]
-USER $USER
