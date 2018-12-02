@@ -46,7 +46,8 @@ RUN apk --update add --no-cache \
     && mkdir -p $HOME/workdir \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
-    && chmod +x /usr/local/bin/start-notebook.sh
+    && chmod +x /usr/local/bin/start-notebook.sh \
+    && chown -R $UID:$UID $HOME/workdir
     
  ######################################################
 # Install Java 8
