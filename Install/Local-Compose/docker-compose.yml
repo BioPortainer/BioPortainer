@@ -27,8 +27,7 @@ services:
     networks:
       - bioportainer-local
     volumes:
-      - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/data
-      - ${PWD}/bioportainer/bioportainer_nextflow:/root/workdir/.nextflow/assets/nextflow-io/
+      - ${PWD}/bioportainer/bioportainer_workdir:/root/workdir/.nextflow/assets/
       
   bioportainer-watchtower:
     image: v2tec/watchtower
@@ -48,4 +47,3 @@ networks:
 volumes:
     bioportainer_data:
     bioportainer_workdir:
-    bioportainer_nextflow:
