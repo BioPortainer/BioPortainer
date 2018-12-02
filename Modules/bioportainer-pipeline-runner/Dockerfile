@@ -19,7 +19,8 @@ ENV SHELL=/bin/bash \
     NXF_DEBUG=0 \
     USER_ID=1000 \
     GROUP_ID=1000 \
-    USER=www-runner
+    USER=www-runner \
+    WORKDIR=$HOME/workdir/data
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
@@ -131,26 +132,21 @@ RUN set -ex \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
-RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
-    deluser --remove-home ${USER} &&\
-    if getent group ${USER} ; then delgroup ${USER}; fi &&\
-    groupadd -g ${GROUP_ID} ${USER} &&\
-    adduser -s /bin/bash -u ${USER_ID} -h $HOME/workdir/data -D ${USER} -G ${USER} && \
-    usermod -u ${USER_ID} ${USER} && \
-    install -d -m 0755 -o ${USER} -g ${USER} $HOME/workdir/data &&\
-    chown --changes --silent --no-dereference --recursive \
+RUN groupadd -g ${GROUP_ID} ${USER} \
+    && adduser -s /bin/bash -u $UID -h $WORKDIR -D $USER -G ${USER},docker \
+    && echo "$USER:$PASS" | chpasswd \
+    && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+    && chown --changes --silent --no-dereference --recursive \
           --from=33:33 ${USER_ID}:${GROUP_ID} \
         $HOME/workdir/data \
         /.config/supervisord \
-        /GUI/conf/scripts/ \
-        /GUI/conf/runners/ \
+        /GUI/conf/scripts \
+        /GUI/conf/runners \
         /root/.nextflow/assets \
-        /start.sh \
-;fi
+        /start.sh
 
-USER www-runner
-  
-WORKDIR $HOME/workdir/data
+USER $USER
+WORKDIR $WORKDIR
 
 EXPOSE 7000
 EXPOSE 8888
