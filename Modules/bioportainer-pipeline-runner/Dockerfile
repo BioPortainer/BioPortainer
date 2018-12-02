@@ -131,10 +131,11 @@ RUN set -ex \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
 RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
-    deluser -f www-runner &&\
+    deluser --remove-home www-runner &&\
     if getent group www-runner ; then delgroup www-runner; fi &&\
     groupadd -g ${GROUP_ID} www-runner &&\
     useradd -l -u ${USER_ID} -g www-runner www-runner &&\
+    usermod -u ${USER_ID} www-runner && \
     install -d -m 0755 -o www-runner -g www-runner $HOME/workdir/data &&\
     chown --changes --silent --no-dereference --recursive \
           --from=33:33 ${USER_ID}:${GROUP_ID} \
