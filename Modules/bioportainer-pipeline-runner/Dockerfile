@@ -2,7 +2,7 @@ FROM python:alpine
 
 ENV USER=www-runner \
     HOME=/headless \
-    ENV=UID 1000 \
+    UID=1000 \
     SHELL=/bin/bash \
     JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_MINOR=192 \
@@ -46,6 +46,8 @@ RUN apk --update add --no-cache \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
+    && chown -R $UID:$UID $HOME/workdir && chown -R -R $UID:$UID /root/.nextflow/assets \
+    && chown -R -R $UID:$UID /.config \
     && echo "$HOME/workdir/data" > /.work
     
  ######################################################
@@ -128,7 +130,9 @@ RUN set -ex \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
-  
+
+USER $USER
+
 WORKDIR $HOME/workdir/data
 
 EXPOSE 7000
