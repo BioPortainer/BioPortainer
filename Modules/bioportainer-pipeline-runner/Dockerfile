@@ -128,11 +128,6 @@ RUN set -ex \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
-  
-RUN ln -s /root/.nextflow/assets $HOME/workdir/data \
-  && chown -R $UID:$UID $HOME/workdir \
-  && chown -R $UID:$UID /.config \
-  && echo "$HOME/workdir/data" > /.work
 
 USER $USER
 
@@ -141,5 +136,5 @@ WORKDIR $HOME/workdir/data
 EXPOSE 7000
 EXPOSE 8888
 EXPOSE 5000
-VOLUME ["$HOME/workdir/data", "/var/lib/docker"]
+VOLUME ["/var/lib/docker"]
 CMD ["/start.sh"]
