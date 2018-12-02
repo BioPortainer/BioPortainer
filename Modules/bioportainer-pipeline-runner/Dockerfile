@@ -135,9 +135,8 @@ RUN addgroup -g $GID -S ${USER} \
     && usermod -aG docker ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && ln -s /root/.nextflow/assets $HOME/workdir/data \
-    && chown -R $UID:$GID $HOME/workdir \
-    && chown -R $UID:$GID /root/.nextflow/assets
-
+    && chown -R $UID:$GID $HOME/workdir
+    
 WORKDIR $HOME/workdir/data
 
 EXPOSE 7000
