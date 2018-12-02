@@ -37,7 +37,7 @@ RUN apk --update add --no-cache \
     && pip3 install tornado typing jupyter bash_kernel nf-core \
     && python3 -m ipykernel install --user \
     && python3 -m bash_kernel.install --user \
-    && apk del build-base && rm -rf /var/cache/apk/*
+    && apk del build-base && rm -rf /var/cache/apk/* \
     && adduser -s /bin/bash -u $UID -h $HOME -D $USER \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config/supervisord \
