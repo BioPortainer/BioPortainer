@@ -19,8 +19,7 @@ ENV SHELL=/bin/bash \
     NXF_DEBUG=0 \
     USER_ID=1000 \
     GROUP_ID=1000 \
-    USER=www-runner \
-    WORKDIR=$HOME/workdir/data
+    USER=www-runner
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
@@ -133,7 +132,7 @@ RUN set -ex \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
 RUN addgroup -g ${GROUP_ID} -S ${USER} \
-    && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $WORKDIR -D -G ${USER} \
+    && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $HOME/workdir/data -D -G ${USER} \
     && usermod -aG docker ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && chown --changes --silent --no-dereference --recursive \
@@ -146,7 +145,7 @@ RUN addgroup -g ${GROUP_ID} -S ${USER} \
         /start.sh
 
 USER $USER
-WORKDIR $WORKDIR
+WORKDIR $HOME/workdir/data
 
 EXPOSE 7000
 EXPOSE 8888
