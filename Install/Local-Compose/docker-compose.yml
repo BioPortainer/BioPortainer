@@ -6,7 +6,6 @@ services:
     container_name: "bioportainer-panel"
     stdin_open: true
     restart: always
-    user: "${CURRENT_UID}"
     ports:
       - "9000:9000"
     networks:
@@ -21,7 +20,9 @@ services:
     privileged: true
     stdin_open: true
     restart: always
-    user: "${CURRENT_UID}"
+    args:
+      USER_ID: ${USER_ID:-0}
+      GROUP_ID: ${GROUP_ID:-0}
     ports:
       - "5000:5000"
       - "7000:7000"
