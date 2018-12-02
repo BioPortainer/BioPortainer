@@ -17,8 +17,8 @@ ENV SHELL=/bin/bash \
     JUPYTER_TYPE=notebook \
     JUPYTER_PORT=8888 \
     NXF_DEBUG=0 \
-    USER_ID=1000 \
-    GROUP_ID=1000 \
+    UID=1000 \
+    GID=1000 \
     USER=www-runner
 
 ADD .config/start.sh /start.sh
@@ -130,14 +130,13 @@ RUN set -ex \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
-RUN addgroup -g ${GROUP_ID} -S ${USER} \
-    && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $HOME/workdir -D -G ${USER} \
+RUN addgroup -g $GID -S ${USER} \
+    && adduser -s /bin/bash -u $UID -S ${USER} -h $HOME/workdir -D -G ${USER} \
     && usermod -aG docker ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && ln -s /root/.nextflow/assets $HOME/workdir/data \
-    && chown -R ${USER_ID}:${GROUP_ID} \
-        $HOME/workdir \
-        /root/.nextflow/assets
+    && chown -R $UID:$GID $HOME/workdir \
+    && chown -R $UID:$GID /root/.nextflow/assets
 
 WORKDIR $HOME/workdir/data
 
