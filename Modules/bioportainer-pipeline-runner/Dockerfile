@@ -130,7 +130,7 @@ RUN set -ex \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
 RUN ln -s /root/.nextflow/assets $HOME/workdir/data \
-  && chown -R $UID:$UID $HOME/workdir && chown -R $UID:$UID /root/.nextflow/assets \
+  && chown -R $UID:$UID $HOME/workdir \
   && chown -R $UID:$UID /.config \
   && echo "$HOME/workdir/data" > /.work
 
