@@ -136,7 +136,7 @@ RUN addgroup -g ${GROUP_ID} -S ${USER} \
     && adduser -s /bin/bash -u ${USER_ID} -S ${USER} -h $WORKDIR -D -G ${USER},docker \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && chown --changes --silent --no-dereference --recursive \
-          --from=33:33 ${USER_ID}:${GROUP_ID} \
+        ${USER_ID}:${GROUP_ID} \
         $HOME/workdir/data \
         /.config/supervisord \
         /GUI/conf/scripts \
