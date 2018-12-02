@@ -140,7 +140,6 @@ RUN addgroup -g ${GROUP_ID} -S ${USER} \
         /root/.nextflow/assets \
     && ln -s /root/.nextflow/assets $HOME/workdir/data
 
-USER $USER
 WORKDIR $HOME/workdir/data
 
 EXPOSE 7000
@@ -148,3 +147,4 @@ EXPOSE 8888
 EXPOSE 5000
 VOLUME ["$HOME/workdir/data", "/var/lib/docker"]
 CMD ["/start.sh"]
+USER $USER
