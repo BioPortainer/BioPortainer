@@ -37,7 +37,6 @@ RUN apk --update add --no-cache \
     && rm -rf /var/cache/apk/* \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
-    && ln -s /root/.nextflow/assets $HOME/workdir/data \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
@@ -137,12 +136,12 @@ RUN addgroup -g ${GROUP_ID} -S ${USER} \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && chown --changes --silent --no-dereference --recursive \
         ${USER_ID}:${GROUP_ID} \
-        $HOME/workdir/data \
+        $HOME/workdir \
         /.config/supervisord \
         /GUI/conf/scripts \
         /GUI/conf/runners \
         /root/.nextflow/assets \
-        /start.sh
+    && ln -s /root/.nextflow/assets $HOME/workdir/data
 
 USER $USER
 WORKDIR $HOME/workdir/data
