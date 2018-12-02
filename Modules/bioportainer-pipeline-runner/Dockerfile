@@ -18,7 +18,8 @@ ENV SHELL=/bin/bash \
     JUPYTER_PORT=8888 \
     NXF_DEBUG=0 \
     USER_ID=1000 \
-    GROUP_ID=1000
+    GROUP_ID=1000 \
+    USER=www-runner
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
@@ -131,12 +132,12 @@ RUN set -ex \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
   
 RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
-    deluser --remove-home www-runner &&\
-    if getent group www-runner ; then delgroup www-runner; fi &&\
-    groupadd -g ${GROUP_ID} www-runner &&\
-    useradd -l -u ${USER_ID} -g www-runner www-runner &&\
-    usermod -u ${USER_ID} www-runner && \
-    install -d -m 0755 -o www-runner -g www-runner $HOME/workdir/data &&\
+    deluser --remove-home ${USER} &&\
+    if getent group ${USER} ; then delgroup ${USER}; fi &&\
+    groupadd -g ${GROUP_ID} ${USER} &&\
+    adduser -s /bin/bash -u ${USER_ID} -h $HOME/workdir/data -D ${USER} -G ${USER} && \
+    usermod -u ${USER_ID} ${USER} && \
+    install -d -m 0755 -o ${USER} -g ${USER} $HOME/workdir/data &&\
     chown --changes --silent --no-dereference --recursive \
           --from=33:33 ${USER_ID}:${GROUP_ID} \
         $HOME/workdir/data \
