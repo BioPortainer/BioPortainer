@@ -128,8 +128,7 @@ RUN set -ex \
            /tmp/* /var/cache/apk/* \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
-  && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin \
-  && chown -R $UID:$UID $HOME/workdir/data
+  && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
     
 WORKDIR $HOME/workdir/data
 
