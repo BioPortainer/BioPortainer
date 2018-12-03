@@ -48,10 +48,13 @@ ENV JAVA_VERSION_MAJOR=8 \
     GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc \
     GLIBC_VERSION=2.28-r0 \
     NXF_DEBUG=0
-    
+
+WORKDIR $HOME/workdir/
+
 EXPOSE 7000
 EXPOSE 8888
 EXPOSE 5000
-VOLUME ["/var/lib/docker"]
+VOLUME ["$HOME/workdir/", "/var/lib/docker"]
+CMD ["/start.sh"]
 
 USER $USER
