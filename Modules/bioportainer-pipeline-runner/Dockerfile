@@ -18,8 +18,7 @@ ENV SHELL=/bin/bash \
     JUPYTER_TYPE=notebook \
     JUPYTER_PORT=8888 \
     NXF_DEBUG=0 \
-    UID=1000 \
-    GID=1000
+    UID=1000
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
@@ -131,7 +130,7 @@ RUN set -ex \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin \
-  && chown -R $UID:$GID $HOME/workdir/data
+  && chown -R $UID:$UID $HOME/workdir/data
     
 WORKDIR $HOME/workdir/data
 
