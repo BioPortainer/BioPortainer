@@ -3333,6 +3333,6 @@
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/LaBiOS/bioportainer/master/images/logo_biocontainer.png",
     "image": "biocontainers/biocontainers",
-    "volumes": [{"container": "/data","container": "/config"}]
+    "volumes": [{"container": "/data"},{"container": "/config"}]
   }
 ]
