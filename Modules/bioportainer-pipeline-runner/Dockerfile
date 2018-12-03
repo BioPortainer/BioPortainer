@@ -3,6 +3,7 @@ FROM python:alpine
 ############### Environment config
 ENV SHELL=/bin/bash \
     HOME=/root \
+    WORKDIR=$HOME/workdir/data \
     JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_MINOR=192 \
     JAVA_VERSION_BUILD=12 \
