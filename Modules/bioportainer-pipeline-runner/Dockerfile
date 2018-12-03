@@ -36,7 +36,7 @@ RUN apk --update add --no-cache \
 USER $USER
 
 RUN pip3 install -U pip \
-    && pip3 install tornado typing jupyter bash_kernel nf-core \
+    && pip3 install -U tornado typing jupyter bash_kernel nf-core \
     && python3 -m ipykernel install --user \
     && python3 -m bash_kernel.install --user
     
