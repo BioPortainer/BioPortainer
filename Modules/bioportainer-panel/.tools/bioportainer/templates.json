@@ -140,6 +140,9 @@
     "interactive": true,
     "name": "BioPortainer-GUI-Server:CPU",
     "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
     "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
@@ -154,6 +157,9 @@
     "interactive": true,
     "name": "BioPortainer-GUI-FASTQC:CPU",
     "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
     "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
@@ -168,6 +174,9 @@
     "interactive": true,
     "name": "BioPortainer-GUI-TOPHAT:CPU",
     "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
     "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
