@@ -1,3 +1,4 @@
 #!/bin/bash
 
 time nextflow view $@
+chown -R 1000:1000 $HOME/workdir/data
