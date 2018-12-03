@@ -20,6 +20,8 @@ services:
     privileged: true
     stdin_open: true
     restart: always
+    environment:
+      - UID=${CURRENT_UID}
     ports:
       - "5000:5000"
       - "7000:7000"
