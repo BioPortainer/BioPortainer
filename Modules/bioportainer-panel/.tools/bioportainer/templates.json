@@ -3,7 +3,7 @@
     "type": 1,
     "title": "BioPortainer Pipeline Runner",
     "description": "BioPortainer ::: Pipeline Runner.",
-    "categories": ["BioPortainer - CPU"],
+    "categories": ["BioPortainer CPU"],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
     "image": "bioportainer/bioportainer-pipeline-runner",
