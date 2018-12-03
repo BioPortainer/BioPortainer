@@ -31,16 +31,11 @@ RUN apk --update add --no-cache \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /usr/local/bin/wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
-    && chown -R $UID:$UID $HOME/workdir
-    
-USER $USER
-
-RUN pip3 install -U pip \
+    && chown -R $UID:$UID $HOME/workdir \
+    && pip3 install -U pip \
     && pip3 install -U tornado typing jupyter bash_kernel nf-core \
     && python3 -m ipykernel install --user \
     && python3 -m bash_kernel.install --user
-    
-USER root
 
 ENV JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_MINOR=192 \
