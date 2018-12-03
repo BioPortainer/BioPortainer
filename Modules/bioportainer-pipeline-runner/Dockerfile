@@ -39,6 +39,7 @@ RUN apk --update add --no-cache \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
     && echo "$HOME/workdir/data" > /.work \
+    && echo "$HOME/workdir/data" > /.workdir \
     && pip3 install -U pip \
     && apk update && apk add --no-cache -u supervisor \
     && pip3 install tornado typing jupyter bash_kernel nf-core \
