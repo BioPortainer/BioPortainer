@@ -28,7 +28,7 @@
     "interactive": true,
     "name": "BioPortainer-Base:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -42,7 +42,7 @@
     "interactive": true,
     "name": "BioPortainer-Base:GPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -56,7 +56,7 @@
     "interactive": true,
     "name": "BioPortainer-SciEnv:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -70,7 +70,7 @@
     "interactive": true,
     "name": "BioPortainer-SciEnv:GPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -84,7 +84,7 @@
     "interactive": true,
     "name": "BioPortainer-PyEnv:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -98,7 +98,7 @@
     "interactive": true,
     "name": "BioPortainer-PyEnv:GPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -112,7 +112,7 @@
     "interactive": true,
     "name": "BioPortainer-SupervisorD:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -126,7 +126,7 @@
     "interactive": true,
     "name": "BioPortainer-SupervisorD:GPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -140,7 +140,7 @@
     "interactive": true,
     "name": "BioPortainer-GUI-Server:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -154,7 +154,7 @@
     "interactive": true,
     "name": "BioPortainer-GUI-FASTQC:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
@@ -168,7 +168,7 @@
     "interactive": true,
     "name": "BioPortainer-GUI-TOPHAT:CPU",
     "note": "none",
-    "volumes": [{ "container": "/root/workdir/data"}, {"container": "/root/workdir/notebook"}]
+    "volumes": [{ "container": "/root/workdir/data"}]
   },
   {
     "type": 1,
