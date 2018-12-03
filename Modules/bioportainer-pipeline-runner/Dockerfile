@@ -10,7 +10,7 @@ ENV USER=www-runner \
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
-ADD .config/wrapdocker /wrapdocker
+ADD .config/wrapdocker /usr/local/bin/
 ADD .tools/GUI /GUI
 ADD .tools/Docker/docker-compose /usr/local/bin/
 ADD .config/supervisord.conf /.config/
@@ -29,7 +29,7 @@ RUN apk --update add --no-cache \
     && mkdir -p /.config/supervisord \
     && mkdir -p $HOME/workdir \
     && chmod -R +x /GUI/conf/scripts/ \
-    && chmod +x /wrapdocker && chmod +x /start.sh \
+    && chmod +x /usr/local/bin/wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
     && chown -R $UID:$UID $HOME/workdir
     
