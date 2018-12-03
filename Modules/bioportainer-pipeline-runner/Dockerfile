@@ -17,8 +17,7 @@ ENV SHELL=/bin/bash \
     LANG=C.UTF-8 \
     JUPYTER_TYPE=notebook \
     JUPYTER_PORT=8888 \
-    NXF_DEBUG=0 \
-    UID=1000
+    NXF_DEBUG=0
 
 ADD .config/start.sh /start.sh
 ADD .config/start-notebook.sh /usr/local/bin/
