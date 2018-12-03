@@ -131,7 +131,7 @@ RUN set -ex \
   && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
   && rm -rf /var/cache/apk/* \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin \
-  && chown -R 1000:1000 $HOME/workdir/data
+  && chown -R $UID:$GID $HOME/workdir/data
     
 WORKDIR $HOME/workdir/data
 
