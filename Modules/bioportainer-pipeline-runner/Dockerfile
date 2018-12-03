@@ -47,7 +47,7 @@ RUN apk --update add --no-cache \
     && chmod -R +x /GUI/conf/scripts/ \
     && chmod +x /wrapdocker && chmod +x /start.sh \
     && chmod +x /usr/local/bin/start-notebook.sh \
-    && chown -R $UID:$UID $HOME/workdir
+    && chown -R $USER:$USER $HOME/workdir
     
  ######################################################
 # Install Java 8
@@ -131,8 +131,6 @@ RUN set -ex \
   && curl -fsSL get.nextflow.io | bash && mv nextflow /usr/bin
 
 USER $USER
-
-WORKDIR $HOME/workdir
 
 EXPOSE 7000
 EXPOSE 8888
