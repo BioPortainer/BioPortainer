@@ -135,7 +135,7 @@
     "categories": ["BioPortainer GUI-Runner"],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
-    "image": "bioportainer/supervisord:cpu",
+    "image": "bioportainer/gui-runner:cpu",
     "privileged": true,
     "interactive": true,
     "name": "GUIRunner",
