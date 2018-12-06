@@ -130,15 +130,15 @@
   },
   {
     "type": 1,
-    "title": "BioPortainer GUI-Server - CPU ",
-    "description": "BioPortainer ::: GUI-Server  - CPU ",
-    "categories": ["BioPortainer GUI-Server"],
+    "title": "BioPortainer GUI-Runner - CPU ",
+    "description": "BioPortainer ::: GUI-Runner  - CPU ",
+    "categories": ["BioPortainer GUI-Runner"],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
     "image": "bioportainer/supervisord:cpu",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-GUI-Server:CPU",
+    "name": "GUIRunner",
     "note": "none",
     "ports": [
       "5000/tcp", "6000/tcp"
@@ -147,15 +147,15 @@
   },
   {
     "type": 1,
-    "title": "BioPortainer GUI-Server - FASTQC ",
-    "description": "BioPortainer ::: GUI-Server  - FASTQC ",
-    "categories": ["BioPortainer GUI-Server"],
+    "title": "BioPortainer GUI-Runner - FASTQC ",
+    "description": "BioPortainer ::: GUI-Runner  - FASTQC ",
+    "categories": ["BioPortainer GUI-Runner"],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
     "image": "bioportainer/fastqc:gui",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-GUI-FASTQC:CPU",
+    "name": "FASTQC",
     "note": "none",
     "ports": [
       "5000/tcp", "6000/tcp"
@@ -164,15 +164,15 @@
   },
   {
     "type": 1,
-    "title": "BioPortainer GUI-Server - TOPHAT ",
-    "description": "BioPortainer ::: GUI-Server  - TOPHAT",
-    "categories": ["BioPortainer GUI-Server"],
+    "title": "BioPortainer GUI-Runner - TOPHAT ",
+    "description": "BioPortainer ::: GUI-Runner  - TOPHAT",
+    "categories": ["BioPortainer GUI-Runner"],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
     "image": "bioportainer/fastqc:gui",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-GUI-TOPHAT:CPU",
+    "name": "TOPHAT",
     "note": "none",
     "ports": [
       "5000/tcp", "6000/tcp"
