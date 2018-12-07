@@ -5,7 +5,6 @@ BioPortainer Test Laboratories:
 - [Scenario 1](#Scenario1)
 - [Scenario 2](#Scenario2)
 - [Scenario 3](#Scenario3)
-- [Scenario 4](#Scenario4)
 
 
 ---
@@ -105,11 +104,3 @@ In this scenario, the Katacoda Learning Platform is used to create a test enviro
 <p align="center"><img src="https://raw.githubusercontent.com/LaBiOS/BioPortainer/master/images/labs/l5.png"></p>
 
 ---
-
-### Scenario 4: Installing and testing BioPortainer in a Docker Engine using Dply <a name="Scenario4" />
-
-As a final test scenario, we provide a BioPortainer installation template on Dply servers (). This project provides a free server for 2 hours, containing 1 CPU, 512MB of RAM and 20GB of disk, plus the option of installing the following operating systems: CentOS 6, CentOS 7, Debian 7, Debian 8, Fedora 24, Fedora 25, Ubuntu 14.04, Ubuntu 16.04. By accessing the button available on the BioPortainer project site, the user can quickly deploy a virtual machine containing the Ubuntu 16.04 operating system and test BioPortainer features.
-
-[![Dply](https://dply.co/b.svg)](https://dply.co/b/PNVHI5YX)
-
-<p align="center"><img src="https://raw.githubusercontent.com/LaBiOS/BioPortainer/master/images/labs/l6.png"></p>
