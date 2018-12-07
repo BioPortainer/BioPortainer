@@ -9,7 +9,7 @@
     "image": "bioportainer/bioportainer-pipeline-runner",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-Pipeline-Runner",
+    "name": "Pipeline-Runner",
     "note": "none",
     "ports": [
       "5000/tcp", "8888/tcp", "7000/tcp"
@@ -26,7 +26,7 @@
     "image": "bioportainer/base:cpu",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-Base:CPU",
+    "name": "Base:CPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -40,7 +40,7 @@
     "image": "bioportainer/base:cuda",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-Base:GPU",
+    "name": "Base:GPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -54,7 +54,7 @@
     "image": "bioportainer/scienv:cpu",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-SciEnv:CPU",
+    "name": "SciEnv:CPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -68,7 +68,7 @@
     "image": "bioportainer/scienv:cuda",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-SciEnv:GPU",
+    "name": "SciEnv:GPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -82,7 +82,7 @@
     "image": "bioportainer/pyenv:cpu",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-PyEnv:CPU",
+    "name": "PyEnv:CPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -96,7 +96,7 @@
     "image": "bioportainer/pyenv:cuda",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-PyEnv:GPU",
+    "name": "PyEnv:GPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -110,7 +110,7 @@
     "image": "bioportainer/supervisord:cpu",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-SupervisorD:CPU",
+    "name": "SupervisorD:CPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -124,7 +124,7 @@
     "image": "bioportainer/supervisord:cuda",
     "privileged": true,
     "interactive": true,
-    "name": "BioPortainer-SupervisorD:GPU",
+    "name": "SupervisorD:GPU",
     "note": "none",
     "volumes": [{ "container": "/root/workdir/data"}]
   },
@@ -181,13 +181,319 @@
   },
   {
     "type": 1,
+    "title": "BioPortainer GUI-Runner - BWA ",
+    "description": "BioPortainer ::: GUI-Runner  - BWA",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/bwa:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "BWA",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - CDHIT ",
+    "description": "BioPortainer ::: GUI-Runner  - CDHIT",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/cdhit:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "CDHIT",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Clustal-O ",
+    "description": "BioPortainer ::: GUI-Runner  - Clustal-O",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/clustalo:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "ClustalO",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Cufflinks",
+    "description": "BioPortainer ::: GUI-Runner  - Cufflinks",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/cufflinks:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Cufflinks",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Deeptools",
+    "description": "BioPortainer ::: GUI-Runner  - Deeptools",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/deeptools:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Deeptools",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Fasta-Splitter",
+    "description": "BioPortainer ::: GUI-Runner - Fasta-Splitter",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/fastasplitter:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Fasta-Splitter",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Fastq-join",
+    "description": "BioPortainer ::: GUI-Runner - Fastq-join",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/fastqjoin:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Fastq-join",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Fastq-tools",
+    "description": "BioPortainer ::: GUI-Runner - Fastq-tools",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/fastqtools:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Fastq-tools",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Fastx-Toolkit",
+    "description": "BioPortainer ::: GUI-Runner - Fastx-Toolkit",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/fastxtoolkit:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Fastx-Toolkit",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Flux-simulator",
+    "description": "BioPortainer ::: GUI-Runner - Flux-simulator",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/fluxsimulator:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Flux-simulator",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Gatk",
+    "description": "BioPortainer ::: GUI-Runner - Gatk",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/gatk:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Gatk",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - GlimmerHMM",
+    "description": "BioPortainer ::: GUI-Runner - GlimmerHMM",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/glimmerhmm:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "GlimmerHMM",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Gmap-fusion",
+    "description": "BioPortainer ::: GUI-Runner - Gmap-fusion",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/gmapfusion:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Gmap-fusion",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Humann2",
+    "description": "BioPortainer ::: GUI-Runner - Humann2",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/gmapfusion:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Gmap-fusion",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Kallisto",
+    "description": "BioPortainer ::: GUI-Runner - Kallisto",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/kallisto:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Kallisto",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Khmer",
+    "description": "BioPortainer ::: GUI-Runner - Khmer",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/khmer:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Khmer",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - miRDeep2",
+    "description": "BioPortainer ::: GUI-Runner - miRDeep2",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/mirdeep2:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "miRDeep2",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
+    "title": "BioPortainer GUI-Runner - Trim-galore",
+    "description": "BioPortainer ::: GUI-Runner - Trim-galore",
+    "categories": ["BioPortainer GUI-Runner"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/logo.png",
+    "image": "bioportainer/trimgalore:gui",
+    "privileged": true,
+    "interactive": true,
+    "name": "Trim-galore",
+    "note": "none",
+    "ports": [
+      "5000/tcp", "6000/tcp"
+    ],
+    "volumes": [{ "container": "/root/workdir/data"}]
+  },
+  {
+    "type": 1,
     "title": "DugongCMD",
     "description": "Desktop-as-a-Service for Bioinformatics. Includes: Jupyter Notebook, BioConda, LinuxBrew, among other features.",
     "categories": ["Dugong Platform"],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/LaBiOS/bioportainer/master/images/logo_dugong.png",
     "image": "dugong/dugong:cmd",
-    "privileged": true,
+      "privileged": true,
     "interactive": true,
     "name": "DugongCMD",
     "note": "none",
