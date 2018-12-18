@@ -1,5 +1,4 @@
-[![DOI](https://zenodo.org/badge/105034013.svg)](https://zenodo.org/badge/latestdoi/105034013)
-
+[![DOI](https://zenodo.org/badge/151837159.svg)](https://zenodo.org/badge/latestdoi/151837159)
 
 <p align="center"><img src="https://raw.githubusercontent.com/LaBiOS/BioPortainer/master/builder/bioportainer/public/images/logo_alt.png"></p>
 
@@ -13,28 +12,6 @@ A general overview of the BioPortainer architecture can be found below: Users (a
 
 
 <p align="center"><img src="https://raw.githubusercontent.com/LaBiOS/BioPortainer/master/images/fig1_alt.png"></p>
-
-
----
-
-## Test BioPortainer NOW!
-
-To test the operation of BioPortainer and demonstrate the ease of use and the possibility of using the service in different operating systems and platforms we provide some installation templates on dply.co's servers.
-
-**dply.co** allows the creation of an absolutely free server for two hours, and can be used for a longer time for payment. If you choose not to buy more time for the server, it is deleted automatically after 2 hours without any charge.
-
-dply.co servers are hosted in the DigitalOcean cloud and have the following specifications:
-
-- 1 CPU
-- 512MB RAM
-- 20GB Disk
-
-We currently offer the following operating systems: CentOS 6, CentOS 7, Debian 7, Debian 8, Fedora 24, Fedora 25, Ubuntu 14.04, Ubuntu 16.04.
-
-Test the BioPortainer on a machine with Ubuntu 16.04 by clicking the button:
-
-[![Dply](https://dply.co/b.svg)](https://dply.co/b/PNVHI5YX) 
-
 
 ---
 
@@ -51,55 +28,19 @@ Test the BioPortainer on a machine with Ubuntu 16.04 by clicking the button:
 
 ---
 
-## BioPortainer Deploy <a name="Deploy-BioPortainer" /> [[menu]](#menu)
+## Installing and Configuring the BioPortainer Workbench <a name="Deploy-BioPortainer" /> [[menu]](#menu)
 
-To start BioPortainer, the user must have [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/) installed on his operating system, according to the tutorials available in the project documentation. The BioPortainer image is available in the Docker Hub and its use is the recommended method of installation.
+Installation of the BioPortainer Workbench is extremely simple and requires only Docker and Docker Compose as initial requirements. After both componets are installed, only two steps are needed to start a BioPortainer Workbench environment. In the first step, the compose.yml file is downloaded from the server (GitHub, or BioPortainer Workbench homepage) to the BioPortainer folder, in the host machine. In the second step, the Docker Compose is executed, downloading the images for the standard BioPortainer Workbench modules and the service is started. When Linux is the host machine's operating system, the following commands must be run on the terminal:
 
-Two steps are required to start a container containing BioPortainer. In the first step, the BioPortainer image is downloaded from the Docker Hub servers to the host, and in the second, a container is created on the host machine with the default BioPortainer installation. If the host machine is a Linux, the following commands must be performed in the terminal:
-
-```
-$ docker pull bioportainer/bioportainer
-```
+Two steps are required to start a container containing BioPortainer:
 
 ```
-$ docker run -d -p 9000:9000 --name BioPortainer \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v ${PWD}/bioportainer_data:/data \
-  bioportainer/bioportainer
+$ wget http://bioportainer.ml/docker-compose.yml -P BioPortainer
+$ cd BioPortainer
+$ docker - compose up -d
 ```
 
-BioPortainer can also be installed through the Docker Compose, according to the procedure below:
-
-1 - Download docker-compose.yml:
-
-```
-$ wget http://bioportainer.ml/docker-compose.yml \
-  -P bioportainer
-```
-
-2 - Run Docker Compose:
-
-```
-$ cd bioportainer; docker-compose up -d
-
-```
-
-Currently, BioPortainer does not require any additional configurations for its full operation, thanks to alterations introduced in the Portainer original source code, resulting in direct installation of BioPortainer templates, in detriment of the templates available through the Portainer default configuration. However, if users already have a default installation of Portainer in their computing environment, the BioPortainer repository can also be deployed through the main menu, using the command: Settings → Application Templates → Use Custom Templates.
-
-
----
-
-## BioPortainer Access <a name="Access-BioPortainer" /> [[menu]](#menu)
-
-After deployment, BioPortainer can be accessed through the host machine's address and port 9000 (if it's a local machine, use http://localhost:9000).
-
-```
-http://<IP or Host>:9000
-
-or
-
-http://localhost:9000
-```
+During the deployment process, some ports and disk volumes will be automatically configured in the host machine. Details on the ports and volumes created are available in the BioPortainer Workbench User Manual, which accompanies this manuscript as a supplementary file. In a standard implementation, the BioPortainer Workbench will use the localhost address (IP 0.0.0.0) as the default address for its internal links. If access is not performed through a local network, additional settings must be made in the Compose file, according to Docker's official documentation, available at: https://docs.docker.com/config/containers/container-networking/#published-ports. 
 
 ---
 
