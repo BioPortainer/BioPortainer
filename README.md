@@ -23,7 +23,10 @@ The third component of the image is the ***BioPortainer Repository***, consistin
 </br>
 
 <p align="center"><img src="https://raw.githubusercontent.com/BioPortainer/BioPortainer/master/images/BioPortainerWorkbench.png"></p>
-<div align="justify">***Figure 1. Overview of the BioPortainer Workbench Architecture:*** Users (a) can access the BioPortainer Workbench image (b) from the [project´s webpage](https://labios.github.io/BioPortainer) and install the software either in single Docker engines, or in Swarm clusters (c). Once Installed, the BioPortainer Workbench (d) consists of two containers (e): the BioPortainer Panel and the BioPortainer Pipeline Runner. These two containers provide access to a series of tools that operate in three distinct functional layers (f), allowing users to implement bioinformatics-related tools (using a variety of alternative platforms), manage resources from the Docker environment and launch their analyses using both CLI-based and GUI-based interfaces (preconfigured through a series of JSON files, available from the BioPortainer Workbench repository [g]), as well as commands/scripts/pipelines harnessed from external repositories (h). See text for details.</p>
+<div align="justify">
+
+***Figure 1. Overview of the BioPortainer Workbench Architecture:*** Users (a) can access the BioPortainer Workbench image (b) from the [project´s webpage](https://labios.github.io/BioPortainer) and install the software either in single Docker engines, or in Swarm clusters (c). Once Installed, the BioPortainer Workbench (d) consists of two containers (e): the BioPortainer Panel and the BioPortainer Pipeline Runner. These two containers provide access to a series of tools that operate in three distinct functional layers (f), allowing users to implement bioinformatics-related tools (using a variety of alternative platforms), manage resources from the Docker environment and launch their analyses using both CLI-based and GUI-based interfaces (preconfigured through a series of JSON files, available from the BioPortainer Workbench repository [g]), as well as commands/scripts/pipelines harnessed from external repositories (h). See text for details.
+</p>
 
 </br>
 </br>
