@@ -94,4 +94,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 <p align="center"><img src="https://raw.githubusercontent.com/LaBiOS/BioPortainer/master/builder/bioportainer/public/images/logo_alt.png"></p>
 
-[![DOI](https://zenodo.org/badge/105034013.svg)](https://zenodo.org/badge/latestdoi/105034013)
+[![DOI](https://zenodo.org/badge/151837159.svg)](https://zenodo.org/badge/latestdoi/151837159)
