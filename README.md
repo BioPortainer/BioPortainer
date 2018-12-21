@@ -22,9 +22,6 @@ The third component of the image is the ***BioPortainer Repository***, consistin
 
 - [BioPortainer Deploy](#Deploy-BioPortainer)
 - [BioPortainer Workbench User Manual](#Documentation-BioPortainer)
-- [BioPortainer Screenshot](#Screenshot-BioPortainer)
-- [BioPortainer Video Tutorial](#Video-BioPortainer)
-- [BioPortainer Lab's](#Test-BioPortainer)
 
 ---
 
