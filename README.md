@@ -52,27 +52,6 @@ For more information on different methods of installing and using the BioPortain
 
 ---
 
-## BioPortainer Screenshots <a name="Screenshot-BioPortainer" /> [[menu]](#menu)
-
-
-Learn about the main features of BioPortainer through screeshots of its graphical interface. Access the screenshots [here](https://github.com/LaBiOS/BioPortainer/blob/master/SCREENSHOT.md).
-
----
-
-## BioPortainer Video Tutorial <a name="Video-BioPortainer" /> [[menu]](#menu)
-
-See BioPortainer installation and setup video tutorials [here](https://github.com/LaBiOS/BioPortainer/blob/master/VIDEOS.md).
-
-
----
-
-## BioPortainer Lab's <a name="Test-BioPortainer" /> [[menu]](#menu)
-
-We offer different scenarios of installation of BioPortainer so that the user can test its functionalities. Learn more by going [here](https://github.com/LaBiOS/BioPortainer/blob/master/LABs.md).
-
-
----
-
 ## Author <a name="Author" /> [[menu]](#menu)
 
 Current development is led by Fabiano Menegidio.
