@@ -21,7 +21,7 @@ The third component of the image is the ***BioPortainer Repository***, consistin
 # MENU <a name="menu" />
 
 - [BioPortainer Deploy](#Deploy-BioPortainer)
-- [BioPortainer Documentation](#Documentation-BioPortainer)
+- [BioPortainer Workbench User Manual](#Documentation-BioPortainer)
 - [BioPortainer Screenshot](#Screenshot-BioPortainer)
 - [BioPortainer Video Tutorial](#Video-BioPortainer)
 - [BioPortainer Lab's](#Test-BioPortainer)
@@ -44,9 +44,10 @@ During the deployment process, some ports and disk volumes will be automatically
 
 ---
 
-## BioPortainer Documentation <a name="Documentation-BioPortainer" /> [[menu]](#menu)
+## BioPortainer Workbench User Manual <a name="Documentation-BioPortainer" /> [[menu]](#menu)
 
-Because BioPortainer is a Portainer fork, general project information can be found in the original [Portainer Documentation](https://portainer.readthedocs.io/en/stable/). A fork of the Portainer documentation with more details on the changes implemented in BioPortainer can be found at:
+
+For more information on different methods of installing and using the BioPortainer Workbench, visit the BioPortainer [Workbench User Manual](https://github.com/BioPortainer/Repository/blob/master/Manual/BioPortainer%20Workbench%20User%20Manual%20-%20Final.pdf).
 
 
 ---
