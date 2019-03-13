@@ -32,9 +32,8 @@ Installation of the BioPortainer Workbench is extremely simple and requires only
 Two steps are required to start a container containing BioPortainer:
 
 ```
-$ wget http://bioportainer.ml/docker-compose.yml -P BioPortainer
-$ cd BioPortainer
-$ docker - compose up -d
+$ wget https://goo.gl/bNecPA -O docker-compose.yml
+$ docker-compose up -d
 ```
 
 During the deployment process, some ports and disk volumes will be automatically configured in the host machine. Details on the ports and volumes created are available in the BioPortainer Workbench User Manual, which accompanies this manuscript as a supplementary file. In a standard implementation, the BioPortainer Workbench will use the localhost address (IP 0.0.0.0) as the default address for its internal links. If access is not performed through a local network, additional settings must be made in the Compose file, according to Docker's official documentation, [available here](https://docs.docker.com/config/containers/container-networking/#published-ports). 
